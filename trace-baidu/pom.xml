@@ -11,5 +11,12 @@
 
     <artifactId>trace-baidu</artifactId>
 
-
+    <dependencies>
+        <!-- trace-common -->
+        <dependency>
+            <groupId>club.mrxiao</groupId>
+            <version>1.0-SNAPSHOT</version>
+            <artifactId>trace-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>
