@@ -11,20 +11,32 @@
     <modules>
         <module>trace-baidu</module>
         <module>trace-amap</module>
-        <module>trace-common</module>
     </modules>
 
     <properties>
         <lombok.version>1.18.8</lombok.version>
+        <hutool.version>4.6.2</hutool.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
         </dependency>
     </dependencies>
 </project>
