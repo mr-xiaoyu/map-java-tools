@@ -2,6 +2,7 @@ package club.mrxiao.baidu.api.impl;
 
 import club.mrxiao.baidu.api.BaiduTraceEntityService;
 import club.mrxiao.baidu.api.BaiduTraceService;
+import club.mrxiao.baidu.api.BaiduTraceTrackService;
 import club.mrxiao.baidu.config.BaiduTraceConfig;
 import cn.hutool.http.HttpUtil;
 
@@ -16,6 +17,7 @@ public class BaiduTraceServiceImpl implements BaiduTraceService {
     private BaiduTraceConfig baiduTraceConfig;
 
     private BaiduTraceEntityService entityService = new BaiduTraceEntityServiceImpl(this);
+    private BaiduTraceTrackService trackService = new BaiduTraceTrackServiceImpl(this);
 
     @Override
     public void setBaiduTraceConfig(BaiduTraceConfig baiduTraceConfig) {
@@ -42,4 +44,7 @@ public class BaiduTraceServiceImpl implements BaiduTraceService {
 
     @Override
     public BaiduTraceEntityService getEntityService() { return this.entityService; }
+
+    @Override
+    public BaiduTraceTrackService getTrackService() { return this.trackService; }
 }

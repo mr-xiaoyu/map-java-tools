@@ -12,12 +12,12 @@ public class BaiduTracePoint {
     /**
      * 纬度
      */
-    private double latitude;
+    private Double latitude;
 
     /**
      * 经度
      */
-    private double longitude;
+    private Double longitude;
 
     /**
      * 坐标类型
@@ -27,26 +27,26 @@ public class BaiduTracePoint {
     /**
      * 定位精度（单位：m）
      */
-    private double radius;
+    private Double radius;
 
     /**
      * 定位时间
      */
-    private long locTime;
+    private Long locTime;
 
     /**
      * 方向（范围为[0,359]，0度为正北方向，顺时针）
      */
-    private int direction;
+    private Integer direction;
 
     /**
      * 速度（单位：km/h）
      */
-    protected double speed;
+    protected Double speed;
 
     /**
      * 高度（单位：m）
      */
-    private double height;
+    private Double height;
 
 }

@@ -45,4 +45,10 @@ public interface BaiduTraceService {
      * @return
      */
     BaiduTraceEntityService getEntityService();
+
+    /**
+     * 返回上传轨迹点对象
+     * @return
+     */
+    BaiduTraceTrackService getTrackService();
 }

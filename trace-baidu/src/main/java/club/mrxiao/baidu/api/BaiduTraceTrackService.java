@@ -14,6 +14,10 @@ public interface BaiduTraceTrackService {
 
     String TRACK_ADDPOINTS = "track/addpoints";
 
+    /**
+     * 轨迹点总数不超过100个
+     */
+    Integer MAX_SIZE = 100;
 
     /**
      *  上传单个轨迹点

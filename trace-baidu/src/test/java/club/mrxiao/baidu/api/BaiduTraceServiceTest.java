@@ -1,10 +1,15 @@
 package club.mrxiao.baidu.api;
 
+import club.mrxiao.baidu.domain.BaiduTraceTrackPoint;
 import club.mrxiao.baidu.request.BaiduTraceCommonRequest;
 import club.mrxiao.baidu.api.impl.BaiduTraceServiceImpl;
 import club.mrxiao.baidu.config.BaiduTraceConfig;
 import club.mrxiao.baidu.request.BaiduTraceEntityRequest;
+import cn.hutool.core.date.DateUtil;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class BaiduTraceServiceTest {
@@ -46,5 +51,47 @@ public class BaiduTraceServiceTest {
         BaiduTraceCommonRequest baiduTraceCommonRequest = new BaiduTraceCommonRequest();
         baiduTraceCommonRequest.pageIndex(1).pageSize(2);
         service.getEntityService().entityList(baiduTraceCommonRequest);
+    }
+
+    @Test
+    public void trackAddPoint(){
+        BaiduTraceService service = this.init();
+        BaiduTraceTrackPoint point = new BaiduTraceTrackPoint();
+
+        point.setLocTime(DateUtil.currentSeconds());
+        point.setLatitude(39.958219);
+        point.setLongitude(116.496246);
+        point.setCoordTypeInput("bd09ll");
+        service.getTrackService().trackAddPoint("test",point);
+    }
+
+    @Test
+    public void trackAddPoints(){
+        BaiduTraceService service = this.init();
+
+        List<BaiduTraceTrackPoint> points = new ArrayList<BaiduTraceTrackPoint>();
+
+        BaiduTraceTrackPoint point = new BaiduTraceTrackPoint();
+        point.setLocTime(DateUtil.currentSeconds());
+        point.setLatitude(39.95528);
+        point.setLongitude(116.496363);
+        point.setCoordTypeInput("bd09ll");
+        points.add(point);
+
+        BaiduTraceTrackPoint point2 = new BaiduTraceTrackPoint();
+        point2.setLocTime(DateUtil.currentSeconds()+5);
+        point2.setLatitude(39.952446);
+        point2.setLongitude(116.496345);
+        point2.setCoordTypeInput("bd09ll");
+        points.add(point2);
+
+        BaiduTraceTrackPoint point3 = new BaiduTraceTrackPoint();
+        point3.setLocTime(DateUtil.currentSeconds()+5);
+        point3.setLatitude(39.949556);
+        point3.setLongitude(116.496291);
+        point3.setCoordTypeInput("bd09ll");
+        points.add(point3);
+
+        service.getTrackService().trackAddPoints("test",points);
     }
 }
