@@ -1,8 +1,7 @@
-package club.mrxiao.baidu.service;
+package club.mrxiao.baidu.api;
 
 import club.mrxiao.baidu.request.BaiduTraceCommonRequest;
-import club.mrxiao.baidu.service.impl.BaiduTraceEntityServiceImpl;
-import club.mrxiao.baidu.service.impl.BaiduTraceServiceImpl;
+import club.mrxiao.baidu.api.impl.BaiduTraceServiceImpl;
 import club.mrxiao.baidu.config.BaiduTraceConfig;
 import club.mrxiao.baidu.request.BaiduTraceEntityRequest;
 import org.junit.Test;
@@ -11,7 +10,7 @@ import org.junit.Test;
 public class BaiduTraceServiceTest {
 
     public BaiduTraceService init(){
-        BaiduTraceConfig baiduTraceConfig = new BaiduTraceConfig("*****",202960);
+        BaiduTraceConfig baiduTraceConfig = new BaiduTraceConfig("mYSzoaLtqidQe4SxIg6EpfsVme8OqRhK",202960);
         BaiduTraceService baiduTraceService = new BaiduTraceServiceImpl();
         baiduTraceService.setBaiduTraceConfig(baiduTraceConfig);
         return baiduTraceService;
@@ -19,33 +18,33 @@ public class BaiduTraceServiceTest {
 
     @Test
     public void entityAdd() {
-        BaiduTraceEntityService baiduTraceEntityService = new BaiduTraceEntityServiceImpl(this.init());
+        BaiduTraceService service = this.init();
         BaiduTraceEntityRequest entityRequest = new BaiduTraceEntityRequest();
         entityRequest.entityName("test").entityDesc("test1");
-        baiduTraceEntityService.entityAdd(entityRequest);
+        service.getEntityService().entityAdd(entityRequest);
     }
 
     @Test
     public void entityUpdate(){
-        BaiduTraceEntityService baiduTraceEntityService = new BaiduTraceEntityServiceImpl(this.init());
+        BaiduTraceService service = this.init();
         BaiduTraceEntityRequest entityRequest = new BaiduTraceEntityRequest();
         entityRequest.entityDesc("test12345").entityName("test");
-        baiduTraceEntityService.entityUpdate(entityRequest);
+        service.getEntityService().entityUpdate(entityRequest);
     }
 
     @Test
     public void entityDelete(){
-        BaiduTraceEntityService baiduTraceEntityService = new BaiduTraceEntityServiceImpl(this.init());
+        BaiduTraceService service = this.init();
         BaiduTraceEntityRequest entityRequest = new BaiduTraceEntityRequest();
         entityRequest.entityName("test");
-        baiduTraceEntityService.entityDelete(entityRequest);
+        service.getEntityService().entityDelete(entityRequest);
     }
 
     @Test
     public void entityList(){
-        BaiduTraceEntityService baiduTraceEntityService = new BaiduTraceEntityServiceImpl(this.init());
+        BaiduTraceService service = this.init();
         BaiduTraceCommonRequest baiduTraceCommonRequest = new BaiduTraceCommonRequest();
         baiduTraceCommonRequest.pageIndex(1).pageSize(2);
-        baiduTraceEntityService.entityList(baiduTraceCommonRequest);
+        service.getEntityService().entityList(baiduTraceCommonRequest);
     }
 }

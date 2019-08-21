@@ -1,4 +1,4 @@
-package club.mrxiao.baidu.service;
+package club.mrxiao.baidu.api;
 
 import club.mrxiao.baidu.request.BaiduTraceCommonRequest;
 import club.mrxiao.baidu.request.BaiduTraceEntityRequest;

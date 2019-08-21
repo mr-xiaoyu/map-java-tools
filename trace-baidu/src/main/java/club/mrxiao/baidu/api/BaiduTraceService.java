@@ -1,4 +1,4 @@
-package club.mrxiao.baidu.service;
+package club.mrxiao.baidu.api;
 
 import club.mrxiao.baidu.config.BaiduTraceConfig;
 
@@ -39,4 +39,10 @@ public interface BaiduTraceService {
      * @return
      */
     String sendGet(String url, Map<String,Object> param);
+
+    /**
+     *  返回终端管理相关服务.
+     * @return
+     */
+    BaiduTraceEntityService getEntityService();
 }

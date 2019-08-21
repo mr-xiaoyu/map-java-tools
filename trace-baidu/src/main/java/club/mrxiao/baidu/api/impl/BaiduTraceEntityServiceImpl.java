@@ -1,10 +1,9 @@
-package club.mrxiao.baidu.service.impl;
+package club.mrxiao.baidu.api.impl;
 
 import club.mrxiao.baidu.request.BaiduTraceCommonRequest;
 import club.mrxiao.baidu.request.BaiduTraceEntityRequest;
-import club.mrxiao.baidu.service.BaiduTraceEntityService;
-import club.mrxiao.baidu.service.BaiduTraceService;
-import cn.hutool.http.HttpUtil;
+import club.mrxiao.baidu.api.BaiduTraceEntityService;
+import club.mrxiao.baidu.api.BaiduTraceService;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 
@@ -16,7 +15,7 @@ public class BaiduTraceEntityServiceImpl implements BaiduTraceEntityService {
 
     private final Log log = LogFactory.get(this.getClass().getName());
 
-    private BaiduTraceService baiduTraceService;
+    private final BaiduTraceService baiduTraceService;
 
     public BaiduTraceEntityServiceImpl(BaiduTraceService baiduTraceService){
         this.baiduTraceService = baiduTraceService;
