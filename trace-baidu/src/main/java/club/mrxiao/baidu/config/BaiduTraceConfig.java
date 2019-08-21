@@ -20,11 +20,11 @@ public class BaiduTraceConfig {
     /**
      *  service的ID
      */
-    private Integer serviceId;
+    private long serviceId;
 
     private Map<String,Object> baseRequest;
 
-    public BaiduTraceConfig(String ak,Integer serviceId){
+    public BaiduTraceConfig(String ak,long serviceId){
         this.ak = ak;
         this.serviceId = serviceId;
         this.baseRequest = new HashMap<String, Object>(3);
