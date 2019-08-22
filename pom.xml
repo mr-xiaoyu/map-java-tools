@@ -8,7 +8,7 @@
     <artifactId>tool-trace</artifactId>
     <packaging>pom</packaging>
     <version>1.0.1</version>
-    <name>trace</name>
+    <name>tool-trace</name>
     <description>百度鹰眼和高德猎鹰轨迹服务api封装</description>
 
     <modules>
