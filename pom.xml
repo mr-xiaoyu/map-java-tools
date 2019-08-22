@@ -7,7 +7,7 @@
     <groupId>club.mrxiao</groupId>
     <artifactId>trace</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <modules>
         <module>trace-baidu</module>
         <module>trace-amap</module>
