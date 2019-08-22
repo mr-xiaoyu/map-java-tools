@@ -10,12 +10,4 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>tool-trace-baidu</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>club.mrxiao</groupId>
-            <artifactId>tool-trace-common</artifactId>
-            <version>${parent.version}</version>
-        </dependency>
-    </dependencies>
 </project>
