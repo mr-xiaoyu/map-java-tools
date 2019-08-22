@@ -5,14 +5,32 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>club.mrxiao</groupId>
-    <artifactId>trace</artifactId>
+    <artifactId>tool-trace</artifactId>
     <packaging>pom</packaging>
     <version>1.0.1</version>
+    <name>trace</name>
+    <description>百度鹰眼和高德猎鹰轨迹服务api封装</description>
+
     <modules>
-        <module>trace-baidu</module>
-        <module>trace-amap</module>
-        <module>trace-common</module>
+        <module>tool-trace-baidu</module>
+        <module>tool-trace-amap</module>
+        <module>tool-trace-common</module>
     </modules>
+
+    <url>https://github.com/mr-xiaoyu/trace</url>
+
+    <scm>
+        <connection>scm:git@github.com:mr-xiaoyu/trace.git</connection>
+        <developerConnection>scm:git@github.com:mr-xiaoyu/trace.git</developerConnection>
+        <url>git@github.com:mr-xiaoyu/trace.git</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>xiaoyu</name>
+            <email>304491159@qq.com</email>
+        </developer>
+    </developers>
 
     <properties>
         <lombok.version>1.18.8</lombok.version>
@@ -34,4 +52,73 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Source -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <configuration>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- GPG -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
