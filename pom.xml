@@ -11,6 +11,7 @@
     <modules>
         <module>trace-baidu</module>
         <module>trace-amap</module>
+        <module>trace-common</module>
     </modules>
 
     <properties>
@@ -31,12 +32,6 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- hutool -->
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>${hutool.version}</version>
         </dependency>
     </dependencies>
 </project>

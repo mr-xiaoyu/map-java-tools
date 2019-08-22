@@ -11,4 +11,11 @@
 
     <artifactId>trace-amap</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>club.mrxiao</groupId>
+            <artifactId>trace-common</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+    </dependencies>
 </project>

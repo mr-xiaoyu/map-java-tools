@@ -9,13 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>trace-baidu</artifactId>
+    <artifactId>trace-common</artifactId>
+
+    <properties>
+        <hutool.version>4.6.2</hutool.version>
+    </properties>
 
     <dependencies>
+        <!-- hutool-http -->
         <dependency>
-            <groupId>club.mrxiao</groupId>
-            <artifactId>trace-common</artifactId>
-            <version>${parent.version}</version>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-http</artifactId>
+            <version>${hutool.version}</version>
         </dependency>
     </dependencies>
 </project>
