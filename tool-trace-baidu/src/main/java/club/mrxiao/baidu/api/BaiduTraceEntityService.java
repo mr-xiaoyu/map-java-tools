@@ -1,5 +1,6 @@
 package club.mrxiao.baidu.api;
 
+import club.mrxiao.baidu.exception.BaiduTraceException;
 import club.mrxiao.baidu.request.BaiduTraceCommonRequest;
 import club.mrxiao.baidu.request.BaiduTraceEntityRequest;
 
@@ -32,23 +33,23 @@ public interface BaiduTraceEntityService {
      * 创建entity
      * @param baiduTraceEntityRequest
      */
-    void entityAdd(BaiduTraceEntityRequest baiduTraceEntityRequest);
+    void entityAdd(BaiduTraceEntityRequest baiduTraceEntityRequest) throws BaiduTraceException;
 
     /**
      * 更新entity
      * @param baiduTraceEntityRequest
      */
-    void entityUpdate(BaiduTraceEntityRequest baiduTraceEntityRequest);
+    void entityUpdate(BaiduTraceEntityRequest baiduTraceEntityRequest) throws BaiduTraceException;
 
     /**
      * 删除entity
      * @param baiduTraceEntityRequest
      */
-    void entityDelete(BaiduTraceEntityRequest baiduTraceEntityRequest);
+    void entityDelete(BaiduTraceEntityRequest baiduTraceEntityRequest) throws BaiduTraceException;
 
     /**
      * 查询entity列表
      * @param baiduTraceCommonRequest
      */
-    void entityList(BaiduTraceCommonRequest baiduTraceCommonRequest);
+    void entityList(BaiduTraceCommonRequest baiduTraceCommonRequest) throws BaiduTraceException;
 }

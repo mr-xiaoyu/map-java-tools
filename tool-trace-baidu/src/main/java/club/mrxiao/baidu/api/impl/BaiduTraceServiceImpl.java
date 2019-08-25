@@ -4,7 +4,13 @@ import club.mrxiao.baidu.api.BaiduTraceEntityService;
 import club.mrxiao.baidu.api.BaiduTraceService;
 import club.mrxiao.baidu.api.BaiduTraceTrackService;
 import club.mrxiao.baidu.config.BaiduTraceConfig;
+import club.mrxiao.baidu.enums.BaiduTraceStatusEnum;
+import club.mrxiao.baidu.exception.BaiduTraceException;
+import club.mrxiao.baidu.response.BaiduTraceBaseResponse;
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 
 import java.util.Map;
 
@@ -31,15 +37,31 @@ public class BaiduTraceServiceImpl implements BaiduTraceService {
 
 
     @Override
-    public String sendPost(String url, Map<String, Object> param) {
+    public JSONObject sendPost(String url, Map<String, Object> param) throws BaiduTraceException {
         param.putAll(baiduTraceConfig.getBaseRequest());
-        return HttpUtil.post(BAST_URL+url, param);
+        String result = HttpUtil.post(BAST_URL+url, param);
+        if(StrUtil.isNotBlank(result)){
+            JSONObject resultObject = JSONUtil.parseObj(result);
+            if(BaiduTraceStatusEnum.succeed.getCode().equals(resultObject.getInt(STATUS_FIELD))){
+                return resultObject;
+            }
+            throw new BaiduTraceException(resultObject.toBean(BaiduTraceBaseResponse.class));
+        }
+        throw new BaiduTraceException("无返回数据");
     }
 
     @Override
-    public String sendGet(String url, Map<String, Object> param) {
+    public JSONObject sendGet(String url, Map<String, Object> param) throws BaiduTraceException {
         param.putAll(baiduTraceConfig.getBaseRequest());
-        return HttpUtil.get(BAST_URL+url, param);
+        String result =  HttpUtil.get(BAST_URL+url, param);
+        if(StrUtil.isNotBlank(result)) {
+            JSONObject resultObject = JSONUtil.parseObj(result);
+            if(BaiduTraceStatusEnum.succeed.getCode().equals(resultObject.getInt(STATUS_FIELD))){
+                return resultObject;
+            }
+            throw new BaiduTraceException(resultObject.toBean(BaiduTraceBaseResponse.class));
+        }
+        throw new BaiduTraceException("无返回数据");
     }
 
     @Override

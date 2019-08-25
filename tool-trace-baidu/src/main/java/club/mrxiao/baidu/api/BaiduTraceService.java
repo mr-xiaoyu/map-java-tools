@@ -1,6 +1,8 @@
 package club.mrxiao.baidu.api;
 
 import club.mrxiao.baidu.config.BaiduTraceConfig;
+import club.mrxiao.baidu.exception.BaiduTraceException;
+import cn.hutool.json.JSONObject;
 
 import java.util.Map;
 
@@ -11,6 +13,10 @@ import java.util.Map;
 public interface BaiduTraceService {
 
     String BAST_URL = "http://yingyan.baidu.com/api/v3/";
+
+    String STATUS_FIELD = "status";
+
+    String MESSAGE_FIELD = "message";
 
     /**
      * 设置配置
@@ -29,16 +35,18 @@ public interface BaiduTraceService {
      * @param url
      * @param param
      * @return
+     * @throws BaiduTraceException
      */
-    String sendPost(String url, Map<String,Object> param);
+    JSONObject sendPost(String url, Map<String,Object> param) throws BaiduTraceException;
 
     /**
      * grt请求
      * @param url
      * @param param
      * @return
+     * @throws BaiduTraceException
      */
-    String sendGet(String url, Map<String,Object> param);
+    JSONObject sendGet(String url, Map<String,Object> param) throws BaiduTraceException;
 
     /**
      *  返回终端管理相关服务.

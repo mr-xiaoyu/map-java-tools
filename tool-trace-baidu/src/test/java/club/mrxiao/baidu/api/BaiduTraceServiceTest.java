@@ -1,6 +1,7 @@
 package club.mrxiao.baidu.api;
 
 import club.mrxiao.baidu.domain.BaiduTraceTrackPoint;
+import club.mrxiao.baidu.exception.BaiduTraceException;
 import club.mrxiao.baidu.request.BaiduTraceCommonRequest;
 import club.mrxiao.baidu.api.impl.BaiduTraceServiceImpl;
 import club.mrxiao.baidu.config.BaiduTraceConfig;
@@ -26,7 +27,11 @@ public class BaiduTraceServiceTest {
         BaiduTraceService service = this.init();
         BaiduTraceEntityRequest entityRequest = new BaiduTraceEntityRequest();
         entityRequest.entityName("test").entityDesc("test1");
-        service.getEntityService().entityAdd(entityRequest);
+        try {
+            service.getEntityService().entityAdd(entityRequest);
+        } catch (BaiduTraceException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -34,7 +39,11 @@ public class BaiduTraceServiceTest {
         BaiduTraceService service = this.init();
         BaiduTraceEntityRequest entityRequest = new BaiduTraceEntityRequest();
         entityRequest.entityDesc("test12345").entityName("test");
-        service.getEntityService().entityUpdate(entityRequest);
+        try {
+            service.getEntityService().entityUpdate(entityRequest);
+        } catch (BaiduTraceException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -42,7 +51,11 @@ public class BaiduTraceServiceTest {
         BaiduTraceService service = this.init();
         BaiduTraceEntityRequest entityRequest = new BaiduTraceEntityRequest();
         entityRequest.entityName("test");
-        service.getEntityService().entityDelete(entityRequest);
+        try {
+            service.getEntityService().entityDelete(entityRequest);
+        } catch (BaiduTraceException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -50,7 +63,11 @@ public class BaiduTraceServiceTest {
         BaiduTraceService service = this.init();
         BaiduTraceCommonRequest baiduTraceCommonRequest = new BaiduTraceCommonRequest();
         baiduTraceCommonRequest.pageIndex(1).pageSize(2);
-        service.getEntityService().entityList(baiduTraceCommonRequest);
+        try {
+            service.getEntityService().entityList(baiduTraceCommonRequest);
+        } catch (BaiduTraceException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -62,7 +79,11 @@ public class BaiduTraceServiceTest {
         point.setLatitude(39.958219);
         point.setLongitude(116.496246);
         point.setCoordTypeInput("bd09ll");
-        service.getTrackService().trackAddPoint("test",point);
+        try {
+            service.getTrackService().trackAddPoint("test",point);
+        } catch (BaiduTraceException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -92,6 +113,10 @@ public class BaiduTraceServiceTest {
         point3.setCoordTypeInput("bd09ll");
         points.add(point3);
 
-        service.getTrackService().trackAddPoints("test",points);
+        try {
+            service.getTrackService().trackAddPoints("test",points);
+        } catch (BaiduTraceException e) {
+            e.printStackTrace();
+        }
     }
 }

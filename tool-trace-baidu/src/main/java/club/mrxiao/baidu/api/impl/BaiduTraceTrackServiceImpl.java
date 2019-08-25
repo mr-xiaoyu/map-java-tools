@@ -3,7 +3,9 @@ package club.mrxiao.baidu.api.impl;
 import club.mrxiao.baidu.api.BaiduTraceService;
 import club.mrxiao.baidu.api.BaiduTraceTrackService;
 import club.mrxiao.baidu.domain.BaiduTraceTrackPoint;
+import club.mrxiao.baidu.exception.BaiduTraceException;
 import club.mrxiao.baidu.request.BaiduTrackPointUploadRequest;
+import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
@@ -28,14 +30,14 @@ public class BaiduTraceTrackServiceImpl implements BaiduTraceTrackService {
     }
 
     @Override
-    public void trackAddPoint(String entityName, BaiduTraceTrackPoint baiduTraceTrackPoint) {
+    public void trackAddPoint(String entityName, BaiduTraceTrackPoint baiduTraceTrackPoint) throws BaiduTraceException {
         BaiduTrackPointUploadRequest request = new BaiduTrackPointUploadRequest(entityName,baiduTraceTrackPoint);
-        String result = this.baiduTraceService.sendPost(TRACK_ADDPOINT,request);
+        JSONObject result = this.baiduTraceService.sendPost(TRACK_ADDPOINT,request);
         log.info("result:{}",result);
     }
 
     @Override
-    public void trackAddPoints(String entityName, List<BaiduTraceTrackPoint> baiduTraceTrackPoints) {
+    public void trackAddPoints(String entityName, List<BaiduTraceTrackPoint> baiduTraceTrackPoints) throws BaiduTraceException {
         if(MAX_SIZE >= baiduTraceTrackPoints.size() && baiduTraceTrackPoints.size() > 0){
             List<Map<String,Object>> pointList = new ArrayList<Map<String, Object>>();
             for(BaiduTraceTrackPoint trackPoint : baiduTraceTrackPoints){
@@ -43,7 +45,7 @@ public class BaiduTraceTrackServiceImpl implements BaiduTraceTrackService {
             }
             Map<String,Object> param = new HashMap<String, Object>(2);
             param.put("point_list",JSONUtil.toJsonStr(pointList));
-            String result = this.baiduTraceService.sendPost(TRACK_ADDPOINTS,param);
+            JSONObject result = this.baiduTraceService.sendPost(TRACK_ADDPOINTS,param);
             log.info("result:{}",result);
         }
     }
