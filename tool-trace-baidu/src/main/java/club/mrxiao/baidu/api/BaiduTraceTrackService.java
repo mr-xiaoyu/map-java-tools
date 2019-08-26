@@ -2,6 +2,8 @@ package club.mrxiao.baidu.api;
 
 import club.mrxiao.baidu.domain.BaiduTraceTrackPoint;
 import club.mrxiao.baidu.exception.BaiduTraceException;
+import club.mrxiao.baidu.response.BaiduTraceBaseResponse;
+import club.mrxiao.baidu.response.BaiduTraceTrackAddPointsResponse;
 
 import java.util.List;
 
@@ -21,16 +23,20 @@ public interface BaiduTraceTrackService {
     Integer MAX_SIZE = 100;
 
     /**
-     *  上传单个轨迹点
+     * 上传单个轨迹点
      * @param entityName
      * @param baiduTraceTrackPoint
+     * @return
+     * @throws BaiduTraceException
      */
-    void trackAddPoint(String entityName,BaiduTraceTrackPoint baiduTraceTrackPoint) throws BaiduTraceException;
+    BaiduTraceBaseResponse trackAddPoint(String entityName, BaiduTraceTrackPoint baiduTraceTrackPoint) throws BaiduTraceException;
 
     /**
      * 批量添加轨迹点
      * @param entityName
      * @param baiduTraceTrackPoints
+     * @return
+     * @throws BaiduTraceException
      */
-    void trackAddPoints(String entityName, List<BaiduTraceTrackPoint> baiduTraceTrackPoints) throws BaiduTraceException;
+    BaiduTraceTrackAddPointsResponse trackAddPoints(String entityName, List<BaiduTraceTrackPoint> baiduTraceTrackPoints) throws BaiduTraceException;
 }

@@ -8,6 +8,7 @@ import club.mrxiao.baidu.config.BaiduTraceConfig;
 import club.mrxiao.baidu.request.BaiduTraceEntityRequest;
 import club.mrxiao.baidu.response.BaiduTraceBaseResponse;
 import club.mrxiao.baidu.response.BaiduTraceEntityListResponse;
+import club.mrxiao.baidu.response.BaiduTraceTrackAddPointsResponse;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
@@ -91,7 +92,8 @@ public class BaiduTraceServiceTest {
         point.setLongitude(116.496246);
         point.setCoordTypeInput("bd09ll");
         try {
-            service.getTrackService().trackAddPoint("test",point);
+            BaiduTraceBaseResponse baiduTraceBaseResponse = service.getTrackService().trackAddPoint("test",point);
+            log.info(JSON.toJSONString(baiduTraceBaseResponse));
         } catch (BaiduTraceException e) {
             log.error(e.getMessage());
         }
@@ -123,9 +125,9 @@ public class BaiduTraceServiceTest {
         point3.setLongitude(116.496291);
         point3.setCoordTypeInput("bd09ll");
         points.add(point3);
-
         try {
-            service.getTrackService().trackAddPoints("test",points);
+            BaiduTraceTrackAddPointsResponse baiduTraceTrackAddPointsResponse = service.getTrackService().trackAddPoints("test",points);
+            log.info(JSON.toJSONString(baiduTraceTrackAddPointsResponse));
         } catch (BaiduTraceException e) {
             log.error(e.getMessage());
         }

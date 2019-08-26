@@ -20,6 +20,11 @@ public class BaiduTraceTrackPoint extends BaiduTracePoint{
     private String objectName;
 
     /**
+     * 错误信息
+     */
+    private String error;
+
+    /**
      * track自定义字段
      */
     private Map<String, String> columns;

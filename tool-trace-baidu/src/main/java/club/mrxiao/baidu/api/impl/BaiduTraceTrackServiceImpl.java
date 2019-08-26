@@ -5,6 +5,8 @@ import club.mrxiao.baidu.api.BaiduTraceTrackService;
 import club.mrxiao.baidu.domain.BaiduTraceTrackPoint;
 import club.mrxiao.baidu.exception.BaiduTraceException;
 import club.mrxiao.baidu.request.BaiduTrackPointUploadRequest;
+import club.mrxiao.baidu.response.BaiduTraceBaseResponse;
+import club.mrxiao.baidu.response.BaiduTraceTrackAddPointsResponse;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.alibaba.fastjson.JSON;
@@ -30,14 +32,14 @@ public class BaiduTraceTrackServiceImpl implements BaiduTraceTrackService {
     }
 
 
-    public void trackAddPoint(String entityName, BaiduTraceTrackPoint baiduTraceTrackPoint) throws BaiduTraceException {
+    public BaiduTraceBaseResponse trackAddPoint(String entityName, BaiduTraceTrackPoint baiduTraceTrackPoint) throws BaiduTraceException {
         BaiduTrackPointUploadRequest request = new BaiduTrackPointUploadRequest(entityName,baiduTraceTrackPoint);
         JSONObject result = this.baiduTraceService.sendPost(TRACK_ADDPOINT,request);
-        log.info("result:{}",result);
+        return JSON.toJavaObject(result,BaiduTraceBaseResponse.class);
     }
 
 
-    public void trackAddPoints(String entityName, List<BaiduTraceTrackPoint> baiduTraceTrackPoints) throws BaiduTraceException {
+    public BaiduTraceTrackAddPointsResponse trackAddPoints(String entityName, List<BaiduTraceTrackPoint> baiduTraceTrackPoints) throws BaiduTraceException {
         if(MAX_SIZE >= baiduTraceTrackPoints.size() && baiduTraceTrackPoints.size() > 0){
             List<Map<String,Object>> pointList = new ArrayList<Map<String, Object>>();
             for(BaiduTraceTrackPoint trackPoint : baiduTraceTrackPoints){
@@ -46,7 +48,8 @@ public class BaiduTraceTrackServiceImpl implements BaiduTraceTrackService {
             Map<String,Object> param = new HashMap<String, Object>(2);
             param.put("point_list",JSON.toJSONString(pointList));
             JSONObject result = this.baiduTraceService.sendPost(TRACK_ADDPOINTS,param);
-            log.info("result:{}",result);
+            return JSON.toJavaObject(result,BaiduTraceTrackAddPointsResponse.class);
         }
+        throw new BaiduTraceException("轨迹点信息参数错误，过长或为空");
     }
 }

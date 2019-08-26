@@ -4,7 +4,6 @@ import club.mrxiao.baidu.domain.BaiduTraceEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -14,9 +13,7 @@ import java.util.List;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class BaiduTraceEntityListResponse extends BaiduTraceBaseResponse implements Serializable{
-
-    private static final long serialVersionUID = -1535370215192886657L;
+public class BaiduTraceEntityListResponse extends BaiduTraceBaseResponse{
 
     /**
      * 结果总条数
