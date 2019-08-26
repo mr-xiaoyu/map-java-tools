@@ -7,7 +7,7 @@
     <groupId>club.mrxiao</groupId>
     <artifactId>tool-trace</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>tool-trace</name>
     <description>百度鹰眼和高德猎鹰轨迹服务api封装</description>
 
@@ -20,9 +20,8 @@
 
     <licenses>
         <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
+            <name>The MIT License (MIT)</name>
+            <url>https://raw.githubusercontent.com/mr-xiaoyu/trace/master/LICENSE</url>
         </license>
     </licenses>
 
