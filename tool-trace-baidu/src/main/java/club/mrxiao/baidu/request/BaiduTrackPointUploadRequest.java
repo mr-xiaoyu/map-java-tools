@@ -12,6 +12,8 @@ import java.util.HashMap;
  */
 public class BaiduTrackPointUploadRequest extends HashMap<String, Object> {
 
+    private static final long serialVersionUID = -1508527357657082761L;
+
     @Override
     public BaiduTrackPointUploadRequest put(String key, Object value) {
         super.put(key, value);

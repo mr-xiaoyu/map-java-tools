@@ -6,7 +6,12 @@ import club.mrxiao.baidu.request.BaiduTraceCommonRequest;
 import club.mrxiao.baidu.api.impl.BaiduTraceServiceImpl;
 import club.mrxiao.baidu.config.BaiduTraceConfig;
 import club.mrxiao.baidu.request.BaiduTraceEntityRequest;
+import club.mrxiao.baidu.response.BaiduTraceBaseResponse;
+import club.mrxiao.baidu.response.BaiduTraceEntityListResponse;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,6 +19,8 @@ import java.util.List;
 
 
 public class BaiduTraceServiceTest {
+
+    private final Log log = LogFactory.get(this.getClass().getName());
 
     public BaiduTraceService init(){
         BaiduTraceConfig baiduTraceConfig = new BaiduTraceConfig("mYSzoaLtqidQe4SxIg6EpfsVme8OqRhK",202960);
@@ -28,9 +35,10 @@ public class BaiduTraceServiceTest {
         BaiduTraceEntityRequest entityRequest = new BaiduTraceEntityRequest();
         entityRequest.entityName("test").entityDesc("test1");
         try {
-            service.getEntityService().entityAdd(entityRequest);
+            BaiduTraceBaseResponse baiduTraceBaseResponse = service.getEntityService().entityAdd(entityRequest);
+            log.info(JSON.toJSONString(baiduTraceBaseResponse));
         } catch (BaiduTraceException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -40,9 +48,10 @@ public class BaiduTraceServiceTest {
         BaiduTraceEntityRequest entityRequest = new BaiduTraceEntityRequest();
         entityRequest.entityDesc("test12345").entityName("test");
         try {
-            service.getEntityService().entityUpdate(entityRequest);
+            BaiduTraceBaseResponse baiduTraceBaseResponse = service.getEntityService().entityUpdate(entityRequest);
+            log.info(JSON.toJSONString(baiduTraceBaseResponse));
         } catch (BaiduTraceException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -52,9 +61,10 @@ public class BaiduTraceServiceTest {
         BaiduTraceEntityRequest entityRequest = new BaiduTraceEntityRequest();
         entityRequest.entityName("test");
         try {
-            service.getEntityService().entityDelete(entityRequest);
+            BaiduTraceBaseResponse baiduTraceBaseResponse = service.getEntityService().entityDelete(entityRequest);
+            log.info(JSON.toJSONString(baiduTraceBaseResponse));
         } catch (BaiduTraceException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -64,9 +74,10 @@ public class BaiduTraceServiceTest {
         BaiduTraceCommonRequest baiduTraceCommonRequest = new BaiduTraceCommonRequest();
         baiduTraceCommonRequest.pageIndex(1).pageSize(2);
         try {
-            service.getEntityService().entityList(baiduTraceCommonRequest);
+            BaiduTraceEntityListResponse baiduTraceEntityListResponse = service.getEntityService().entityList(baiduTraceCommonRequest);
+            log.info(JSON.toJSONString(baiduTraceEntityListResponse));
         } catch (BaiduTraceException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -82,7 +93,7 @@ public class BaiduTraceServiceTest {
         try {
             service.getTrackService().trackAddPoint("test",point);
         } catch (BaiduTraceException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -116,7 +127,7 @@ public class BaiduTraceServiceTest {
         try {
             service.getTrackService().trackAddPoints("test",points);
         } catch (BaiduTraceException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 }

@@ -8,6 +8,8 @@ import java.util.HashMap;
  */
 public class BaiduTraceCommonRequest extends HashMap<String, Object> {
 
+    private static final long serialVersionUID = 5962324515792193982L;
+
     @Override
     public BaiduTraceCommonRequest put(String key, Object value) {
         super.put(key, value);

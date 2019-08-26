@@ -2,7 +2,7 @@ package club.mrxiao.baidu.api;
 
 import club.mrxiao.baidu.config.BaiduTraceConfig;
 import club.mrxiao.baidu.exception.BaiduTraceException;
-import cn.hutool.json.JSONObject;
+import com.alibaba.fastjson.JSONObject;
 
 import java.util.Map;
 

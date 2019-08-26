@@ -6,9 +6,9 @@ import club.mrxiao.baidu.request.BaiduTraceEntityRequest;
 import club.mrxiao.baidu.api.BaiduTraceEntityService;
 import club.mrxiao.baidu.api.BaiduTraceService;
 import club.mrxiao.baidu.response.BaiduTraceBaseResponse;
-import cn.hutool.json.JSONObject;
-import cn.hutool.log.Log;
-import cn.hutool.log.LogFactory;
+import club.mrxiao.baidu.response.BaiduTraceEntityListResponse;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * 终端管理类接口
@@ -16,36 +16,29 @@ import cn.hutool.log.LogFactory;
  */
 public class BaiduTraceEntityServiceImpl implements BaiduTraceEntityService {
 
-    private final Log log = LogFactory.get(this.getClass().getName());
-
     private final BaiduTraceService baiduTraceService;
 
     public BaiduTraceEntityServiceImpl(BaiduTraceService baiduTraceService){
         this.baiduTraceService = baiduTraceService;
     }
 
-    @Override
-    public void entityAdd(BaiduTraceEntityRequest baiduTraceEntityRequest) throws BaiduTraceException {
+    public BaiduTraceBaseResponse entityAdd(BaiduTraceEntityRequest baiduTraceEntityRequest) throws BaiduTraceException {
         JSONObject result= this.baiduTraceService.sendPost(ENTITY_ADD,baiduTraceEntityRequest);
-        BaiduTraceBaseResponse baiduTraceBaseResponse = result.toBean(BaiduTraceBaseResponse.class);
-        log.info("result:{}",result);
+        return JSON.toJavaObject(result,BaiduTraceBaseResponse.class);
     }
 
-    @Override
-    public void entityUpdate(BaiduTraceEntityRequest baiduTraceEntityRequest) throws BaiduTraceException {
+    public BaiduTraceBaseResponse entityUpdate(BaiduTraceEntityRequest baiduTraceEntityRequest) throws BaiduTraceException {
         JSONObject result= this.baiduTraceService.sendPost(ENTITY_UPDATE,baiduTraceEntityRequest);
-        log.info("result:{}",result);
+        return JSON.toJavaObject(result,BaiduTraceBaseResponse.class);
     }
 
-    @Override
-    public void entityDelete(BaiduTraceEntityRequest baiduTraceEntityRequest) throws BaiduTraceException {
+    public BaiduTraceBaseResponse entityDelete(BaiduTraceEntityRequest baiduTraceEntityRequest) throws BaiduTraceException {
         JSONObject result= this.baiduTraceService.sendPost(ENTITY_DELETE,baiduTraceEntityRequest);
-        log.info("result:{}",result);
+        return JSON.toJavaObject(result,BaiduTraceBaseResponse.class);
     }
 
-    @Override
-    public void entityList(BaiduTraceCommonRequest baiduTraceCommonRequest) throws BaiduTraceException {
+    public BaiduTraceEntityListResponse entityList(BaiduTraceCommonRequest baiduTraceCommonRequest) throws BaiduTraceException {
         JSONObject result= this.baiduTraceService.sendGet(ENTITY_LIST,baiduTraceCommonRequest);
-        log.info("result:{}",result);
+        return JSON.toJavaObject(result,BaiduTraceEntityListResponse.class);
     }
 }

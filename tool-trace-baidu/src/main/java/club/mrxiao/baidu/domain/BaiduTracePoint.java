@@ -1,5 +1,6 @@
 package club.mrxiao.baidu.domain;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
 /**
@@ -32,6 +33,7 @@ public class BaiduTracePoint {
     /**
      * 定位时间
      */
+    @JSONField(name="loc_time")
     private Long locTime;
 
     /**

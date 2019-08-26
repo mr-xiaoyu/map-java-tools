@@ -9,8 +9,8 @@ import club.mrxiao.baidu.exception.BaiduTraceException;
 import club.mrxiao.baidu.response.BaiduTraceBaseResponse;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
-import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 
 import java.util.Map;
 
@@ -25,48 +25,44 @@ public class BaiduTraceServiceImpl implements BaiduTraceService {
     private BaiduTraceEntityService entityService = new BaiduTraceEntityServiceImpl(this);
     private BaiduTraceTrackService trackService = new BaiduTraceTrackServiceImpl(this);
 
-    @Override
+
     public void setBaiduTraceConfig(BaiduTraceConfig baiduTraceConfig) {
         this.baiduTraceConfig = baiduTraceConfig;
     }
 
-    @Override
     public BaiduTraceConfig getBaiduTraceConfig() {
         return baiduTraceConfig;
     }
 
 
-    @Override
     public JSONObject sendPost(String url, Map<String, Object> param) throws BaiduTraceException {
         param.putAll(baiduTraceConfig.getBaseRequest());
         String result = HttpUtil.post(BAST_URL+url, param);
         if(StrUtil.isNotBlank(result)){
-            JSONObject resultObject = JSONUtil.parseObj(result);
-            if(BaiduTraceStatusEnum.succeed.getCode().equals(resultObject.getInt(STATUS_FIELD))){
+            JSONObject resultObject = JSONObject.parseObject(result);
+            if(BaiduTraceStatusEnum.succeed.getCode().equals(resultObject.getInteger(STATUS_FIELD))){
                 return resultObject;
             }
-            throw new BaiduTraceException(resultObject.toBean(BaiduTraceBaseResponse.class));
+            throw new BaiduTraceException(JSON.toJavaObject(resultObject,BaiduTraceBaseResponse.class));
         }
         throw new BaiduTraceException("无返回数据");
     }
 
-    @Override
     public JSONObject sendGet(String url, Map<String, Object> param) throws BaiduTraceException {
         param.putAll(baiduTraceConfig.getBaseRequest());
         String result =  HttpUtil.get(BAST_URL+url, param);
         if(StrUtil.isNotBlank(result)) {
-            JSONObject resultObject = JSONUtil.parseObj(result);
-            if(BaiduTraceStatusEnum.succeed.getCode().equals(resultObject.getInt(STATUS_FIELD))){
+            JSONObject resultObject = JSONObject.parseObject(result);
+            if(BaiduTraceStatusEnum.succeed.getCode().equals(resultObject.getInteger(STATUS_FIELD))){
                 return resultObject;
             }
-            throw new BaiduTraceException(resultObject.toBean(BaiduTraceBaseResponse.class));
+            throw new BaiduTraceException(JSON.toJavaObject(resultObject,BaiduTraceBaseResponse.class));
         }
         throw new BaiduTraceException("无返回数据");
     }
 
-    @Override
     public BaiduTraceEntityService getEntityService() { return this.entityService; }
 
-    @Override
+
     public BaiduTraceTrackService getTrackService() { return this.trackService; }
 }

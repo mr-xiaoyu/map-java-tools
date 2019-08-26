@@ -1,5 +1,6 @@
 package club.mrxiao.baidu.domain;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -15,6 +16,7 @@ public class BaiduTraceTrackPoint extends BaiduTracePoint{
     /**
      * 对象数据名称
      */
+    @JSONField(name="object_name")
     private String objectName;
 
     /**
