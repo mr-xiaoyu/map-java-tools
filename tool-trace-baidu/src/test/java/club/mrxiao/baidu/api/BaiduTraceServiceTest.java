@@ -91,8 +91,9 @@ public class BaiduTraceServiceTest {
         point.setLatitude(39.958219);
         point.setLongitude(116.496246);
         point.setCoordTypeInput("bd09ll");
+        point.setEntityName("test");
         try {
-            BaiduTraceBaseResponse baiduTraceBaseResponse = service.getTrackService().trackAddPoint("test",point);
+            BaiduTraceBaseResponse baiduTraceBaseResponse = service.getTrackService().trackAddPoint(point);
             log.info(JSON.toJSONString(baiduTraceBaseResponse));
         } catch (BaiduTraceException e) {
             log.error(e.getMessage());
@@ -110,6 +111,7 @@ public class BaiduTraceServiceTest {
         point.setLatitude(39.95528);
         point.setLongitude(116.496363);
         point.setCoordTypeInput("bd09ll");
+        point.setEntityName("test");
         points.add(point);
 
         BaiduTraceTrackPoint point2 = new BaiduTraceTrackPoint();
@@ -117,6 +119,7 @@ public class BaiduTraceServiceTest {
         point2.setLatitude(39.952446);
         point2.setLongitude(116.496345);
         point2.setCoordTypeInput("bd09ll");
+        point2.setEntityName("test");
         points.add(point2);
 
         BaiduTraceTrackPoint point3 = new BaiduTraceTrackPoint();
@@ -124,9 +127,10 @@ public class BaiduTraceServiceTest {
         point3.setLatitude(39.949556);
         point3.setLongitude(116.496291);
         point3.setCoordTypeInput("bd09ll");
+        point3.setEntityName("test");
         points.add(point3);
         try {
-            BaiduTraceTrackAddPointsResponse baiduTraceTrackAddPointsResponse = service.getTrackService().trackAddPoints("test",points);
+            BaiduTraceTrackAddPointsResponse baiduTraceTrackAddPointsResponse = service.getTrackService().trackAddPoints(points);
             log.info(JSON.toJSONString(baiduTraceTrackAddPointsResponse));
         } catch (BaiduTraceException e) {
             log.error(e.getMessage());

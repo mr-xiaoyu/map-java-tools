@@ -23,6 +23,7 @@ public class BaiduTracePoint {
     /**
      * 坐标类型
      */
+    @JSONField(name="coord_type_input")
     private String coordTypeInput;
 
     /**

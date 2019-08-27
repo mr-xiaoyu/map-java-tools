@@ -23,8 +23,6 @@ import java.util.Map;
  */
 public class BaiduTraceTrackServiceImpl implements BaiduTraceTrackService {
 
-    private final Log log = LogFactory.get(this.getClass().getName());
-
     private final BaiduTraceService baiduTraceService;
 
     public BaiduTraceTrackServiceImpl(BaiduTraceService baiduTraceService){
@@ -32,21 +30,17 @@ public class BaiduTraceTrackServiceImpl implements BaiduTraceTrackService {
     }
 
 
-    public BaiduTraceBaseResponse trackAddPoint(String entityName, BaiduTraceTrackPoint baiduTraceTrackPoint) throws BaiduTraceException {
-        BaiduTrackPointUploadRequest request = new BaiduTrackPointUploadRequest(entityName,baiduTraceTrackPoint);
+    public BaiduTraceBaseResponse trackAddPoint(BaiduTraceTrackPoint baiduTraceTrackPoint) throws BaiduTraceException {
+        BaiduTrackPointUploadRequest request = new BaiduTrackPointUploadRequest(baiduTraceTrackPoint);
         JSONObject result = this.baiduTraceService.sendPost(TRACK_ADDPOINT,request);
         return JSON.toJavaObject(result,BaiduTraceBaseResponse.class);
     }
 
 
-    public BaiduTraceTrackAddPointsResponse trackAddPoints(String entityName, List<BaiduTraceTrackPoint> baiduTraceTrackPoints) throws BaiduTraceException {
+    public BaiduTraceTrackAddPointsResponse trackAddPoints(List<BaiduTraceTrackPoint> baiduTraceTrackPoints) throws BaiduTraceException {
         if(MAX_SIZE >= baiduTraceTrackPoints.size() && baiduTraceTrackPoints.size() > 0){
-            List<Map<String,Object>> pointList = new ArrayList<Map<String, Object>>();
-            for(BaiduTraceTrackPoint trackPoint : baiduTraceTrackPoints){
-                pointList.add(new BaiduTrackPointUploadRequest(entityName,trackPoint));
-            }
             Map<String,Object> param = new HashMap<String, Object>(2);
-            param.put("point_list",JSON.toJSONString(pointList));
+            param.put("point_list",JSON.toJSONString(baiduTraceTrackPoints));
             JSONObject result = this.baiduTraceService.sendPost(TRACK_ADDPOINTS,param);
             return JSON.toJavaObject(result,BaiduTraceTrackAddPointsResponse.class);
         }

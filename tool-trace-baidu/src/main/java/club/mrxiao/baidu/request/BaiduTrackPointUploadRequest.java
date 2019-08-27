@@ -20,10 +20,10 @@ public class BaiduTrackPointUploadRequest extends HashMap<String, Object> {
         return this;
     }
 
-    public BaiduTrackPointUploadRequest(String entityName, BaiduTraceTrackPoint baiduTraceTrackPoint){
+    public BaiduTrackPointUploadRequest(BaiduTraceTrackPoint baiduTraceTrackPoint){
         //entity唯一标识
-        if(StrUtil.isNotBlank(entityName)){
-            this.put("entity_name",entityName);
+        if(StrUtil.isNotBlank(baiduTraceTrackPoint.getEntityName())){
+            this.put("entity_name",baiduTraceTrackPoint.getEntityName());
         }
         //经度
         if(baiduTraceTrackPoint.getLongitude() != null){

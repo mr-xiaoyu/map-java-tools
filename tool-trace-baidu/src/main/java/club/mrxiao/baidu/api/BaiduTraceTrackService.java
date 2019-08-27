@@ -24,19 +24,17 @@ public interface BaiduTraceTrackService {
 
     /**
      * 上传单个轨迹点
-     * @param entityName
      * @param baiduTraceTrackPoint
      * @return
      * @throws BaiduTraceException
      */
-    BaiduTraceBaseResponse trackAddPoint(String entityName, BaiduTraceTrackPoint baiduTraceTrackPoint) throws BaiduTraceException;
+    BaiduTraceBaseResponse trackAddPoint(BaiduTraceTrackPoint baiduTraceTrackPoint) throws BaiduTraceException;
 
     /**
      * 批量添加轨迹点
-     * @param entityName
      * @param baiduTraceTrackPoints
      * @return
      * @throws BaiduTraceException
      */
-    BaiduTraceTrackAddPointsResponse trackAddPoints(String entityName, List<BaiduTraceTrackPoint> baiduTraceTrackPoints) throws BaiduTraceException;
+    BaiduTraceTrackAddPointsResponse trackAddPoints(List<BaiduTraceTrackPoint> baiduTraceTrackPoints) throws BaiduTraceException;
 }

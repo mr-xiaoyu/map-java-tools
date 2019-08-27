@@ -18,7 +18,11 @@ public class BaiduTraceTrackPoint extends BaiduTracePoint{
      */
     @JSONField(name="object_name")
     private String objectName;
-
+    /**
+     * entity唯一标识
+     */
+    @JSONField(name="entity_name")
+    private String entityName;
     /**
      * 错误信息
      */
