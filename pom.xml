@@ -5,30 +5,30 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>club.mrxiao</groupId>
-    <artifactId>tool-trace</artifactId>
+    <artifactId>map-java-tools</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.3</version>
-    <name>tool-trace</name>
-    <description>百度鹰眼和高德猎鹰轨迹服务api封装</description>
+    <version>1.0.4</version>
+    <name>map-java-tools</name>
+    <description>地图api封装</description>
 
     <modules>
-        <module>tool-trace-baidu</module>
-        <module>tool-trace-amap</module>
+        <module>map-java-baidu</module>
+        <module>map-java-amap</module>
     </modules>
 
-    <url>https://github.com/mr-xiaoyu/trace</url>
+    <url>https://github.com/mr-xiaoyu/map-java-tools</url>
 
     <licenses>
         <license>
             <name>The MIT License (MIT)</name>
-            <url>https://raw.githubusercontent.com/mr-xiaoyu/trace/master/LICENSE</url>
+            <url>https://raw.githubusercontent.com/mr-xiaoyu/map-java-tools/master/LICENSE</url>
         </license>
     </licenses>
 
     <scm>
-        <connection>scm:git@github.com:mr-xiaoyu/trace.git</connection>
-        <developerConnection>scm:git@github.com:mr-xiaoyu/trace.git</developerConnection>
-        <url>git@github.com:mr-xiaoyu/trace.git</url>
+        <connection>scm:git@github.com:mr-xiaoyu/map-java-tools.git</connection>
+        <developerConnection>scm:git@github.com:mr-xiaoyu/map-java-tools.git</developerConnection>
+        <url>git@github.com:mr-xiaoyu/map-java-tools.git</url>
     </scm>
 
     <developers>

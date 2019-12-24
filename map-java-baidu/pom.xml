@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>tool-trace</artifactId>
+        <artifactId>map-java-tools</artifactId>
         <groupId>club.mrxiao</groupId>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tool-trace-amap</artifactId>
+    <artifactId>map-java-baidu</artifactId>
 
-    <description>高德猎鹰轨迹服务api封装</description>
+    <description>百度地图服务api封装</description>
 </project>
