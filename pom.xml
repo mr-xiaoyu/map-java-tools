@@ -10,24 +10,23 @@
     <version>1.0.4</version>
     <name>map-java-tools</name>
     <description>地图api封装</description>
+    <url>https://github.com/mr-xiaoyu/map-java-tools</url>
 
     <modules>
         <module>map-java-baidu</module>
     </modules>
 
-    <url>https://github.com/mr-xiaoyu/map-java-tools</url>
-
     <licenses>
         <license>
-            <name>The MIT License (MIT)</name>
-            <url>https://raw.githubusercontent.com/mr-xiaoyu/map-java-tools/master/LICENSE</url>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
 
     <scm>
         <connection>scm:git@github.com:mr-xiaoyu/map-java-tools.git</connection>
         <developerConnection>scm:git@github.com:mr-xiaoyu/map-java-tools.git</developerConnection>
-        <url>git@github.com:mr-xiaoyu/map-java-tools.git</url>
+        <url>https://github.com/mr-xiaoyu/map-java-tools</url>
     </scm>
 
     <developers>
