@@ -13,7 +13,6 @@
 
     <modules>
         <module>map-java-baidu</module>
-        <module>map-java-amap</module>
     </modules>
 
     <url>https://github.com/mr-xiaoyu/map-java-tools</url>
