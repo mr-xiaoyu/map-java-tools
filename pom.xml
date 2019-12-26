@@ -7,7 +7,7 @@
     <groupId>club.mrxiao</groupId>
     <artifactId>map-java-tools</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.4</version>
+    <version>2.0.1.B</version>
     <name>map-java-tools</name>
     <description>地图api封装</description>
     <url>https://github.com/mr-xiaoyu/map-java-tools</url>
