@@ -1,9 +1,6 @@
 package club.mrxiao.baidu.api.impl;
 
-import club.mrxiao.baidu.api.BaiduMapGeocoderService;
-import club.mrxiao.baidu.api.BaiduMapPlaceService;
-import club.mrxiao.baidu.api.BaiduMapPlaceSuggestionService;
-import club.mrxiao.baidu.api.BaiduMapService;
+import club.mrxiao.baidu.api.*;
 import club.mrxiao.baidu.config.BaiduMapConfig;
 import club.mrxiao.common.error.BaiduMapError;
 import club.mrxiao.common.error.BaiduMapErrorException;
@@ -28,6 +25,7 @@ public class BaiduMapServiceImpl implements BaiduMapService {
     private BaiduMapPlaceSuggestionService placeSuggestionService = new BaiduMapPlaceSuggestionServiceImpl(this);
     private BaiduMapGeocoderService geocoderService = new BaiduMapGeocoderServiceImpl(this);
     private BaiduMapPlaceService placeService = new BaiduMapPlaceServiceImpl(this);
+    private BaiduMapGeoconvService geoconvService = new BaiduMapGeoconvServiceImpl(this);
 
     @Override
     public BaiduMapConfig getBaiduMapConfig() {
@@ -68,6 +66,11 @@ public class BaiduMapServiceImpl implements BaiduMapService {
     @Override
     public BaiduMapPlaceService getBaiduMapPlaceService() {
         return this.placeService;
+    }
+
+    @Override
+    public BaiduMapGeoconvService getBaiduMapGeoconvService() {
+        return this.geoconvService;
     }
 
     private String toQueryString(JSONObject data) {
