@@ -66,7 +66,7 @@ public class BaiduMapPlaceSuggestionRequest implements Serializable {
      * </pre>
      */
     @JSONField(name="coord_type")
-    private String coordType;
+    private Integer coordType;
 
     /**
      * 返回坐标类型

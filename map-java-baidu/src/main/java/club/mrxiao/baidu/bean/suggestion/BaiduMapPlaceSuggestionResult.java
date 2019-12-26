@@ -82,7 +82,7 @@ public class BaiduMapPlaceSuggestionResult  implements Serializable {
     }
 
     @Data
-    private static class Children{
+    public static class Children{
 
         /**
          * 子点ID，可用于poi详情检索。默认不召回，若有需求请联系我们(完成企业认证后，才能开通权限)
@@ -99,6 +99,21 @@ public class BaiduMapPlaceSuggestionResult  implements Serializable {
          */
         @JSONField(name="show_name")
         private String showName;
+
+        /**
+         * poi子点类别
+         */
+        private String tag;
+
+        /**
+         * poi子点地址
+         */
+        private String address;
+
+        /**
+         * poi子点坐标
+         */
+        private Location location;
     }
 
 
