@@ -15,6 +15,7 @@
     <modules>
         <module>map-java-baidu</module>
         <module>map-java-common</module>
+        <module>map-java-spring-boot-starters</module>
     </modules>
 
     <licenses>
