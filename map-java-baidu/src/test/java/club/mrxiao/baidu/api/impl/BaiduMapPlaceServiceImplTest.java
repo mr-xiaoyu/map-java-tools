@@ -12,6 +12,7 @@ import cn.hutool.log.LogFactory;
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -25,7 +26,6 @@ public class BaiduMapPlaceServiceImplTest {
         BaiduMapPlaceRequest request = BaiduMapPlaceRequest.builder()
                 .query("和泰园")
                 .region("北京")
-                .scope("2")
                 .build();
         List<BaiduMapPlaceResult> results = service.getBaiduMapPlaceService().placeSearch(request);
         log.info("\n【result】:{}", JSON.toJSONString(results));
@@ -37,11 +37,22 @@ public class BaiduMapPlaceServiceImplTest {
         BaiduMapPlaceRequest request = BaiduMapPlaceRequest.builder()
                 .query("和泰园")
                 .region("北京")
-                .scope("2")
                 .pageNum(0)
                 .pageSize(2)
                 .build();
         ResultDataTable table = service.getBaiduMapPlaceService().placeSearch(request);
         log.info("\n【result】:{}", JSON.toJSONString(table));
     }
+
+    @Test
+    public void placeDetailTest() throws BaiduMapErrorException {
+        BaiduMapService service = ServiceFactory.getService();
+        List<String> uids = new ArrayList<>();
+        uids.add("a1418eb477b2897feae5828d");
+        uids.add("0bb0c4527e9adc93da2f2863");
+        uids.add("59a72490fd34fc879cec2bae");
+        List<BaiduMapPlaceResult> results = service.getBaiduMapPlaceService().placeDetail(null,uids);
+        log.info("\n【result】:{}", JSON.toJSONString(results));
+    }
+
 }

@@ -226,9 +226,9 @@ public class BaiduMapPlaceResult implements Serializable {
     }
 
 
-    public static <T> T toList(String json){
+    public static <T> T toList(String json,String key){
         JSONObject object = JSONObject.parseObject(json);
-        List<BaiduMapPlaceResult> results = object.getJSONArray("results").toJavaList(BaiduMapPlaceResult.class);
+        List<BaiduMapPlaceResult> results = object.getJSONArray(key).toJavaList(BaiduMapPlaceResult.class);
         if(object.containsKey("total")){
             ResultDataTable table = ResultDataTable.builder().rows(results).total(object.getInteger("total")).build();
             return (T) table;
