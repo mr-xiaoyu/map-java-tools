@@ -44,6 +44,12 @@ public interface BaiduMapService {
     BaiduMapPlaceService getBaiduMapPlaceService();
 
     /**
+     * 获取百度地图坐标转换服务接口
+     * @return 百度地图坐标转换服务接口
+     */
+    BaiduMapGeoconvService getBaiduMapGeoconvService();
+
+    /**
      * 发送get请求
      * @param url 请求地址
      * @param jsonParam json对象

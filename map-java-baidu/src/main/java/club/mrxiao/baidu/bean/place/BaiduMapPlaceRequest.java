@@ -136,7 +136,6 @@ public class BaiduMapPlaceRequest implements Serializable {
      * 描述： 1（wgs84ll即GPS经纬度），2（gcj02ll即国测局经纬度坐标），3（bd09ll即百度经纬度坐标），4（bd09mc即百度米制坐标）注："ll为小写LL"
      * </pre>
      */
-    @Builder.Default
     @JSONField(name="coord_type")
     private Integer coordType;
 
