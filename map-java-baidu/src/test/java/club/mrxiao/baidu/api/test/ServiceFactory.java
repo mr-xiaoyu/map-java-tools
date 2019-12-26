@@ -8,7 +8,7 @@ public class ServiceFactory {
 
     public static BaiduMapService getService(){
         BaiduMapConfig config = new BaiduMapConfig();
-        config.setAk("mYSzoaLtqidQe4SxIg6EpfsVme8OqRhK");
+        config.setAk("5W3c6kUaG48r6I5aRpjuOBM5xGwGaRyQ");
         BaiduMapService service = new BaiduMapServiceImpl();
         service.setBaiduMapConfig(config);
         return service;

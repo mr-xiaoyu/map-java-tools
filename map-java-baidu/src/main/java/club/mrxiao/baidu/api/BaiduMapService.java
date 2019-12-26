@@ -32,6 +32,12 @@ public interface BaiduMapService {
     BaiduMapPlaceSuggestionService getBaiduMapPlaceSuggestionService();
 
     /**
+     * 获取百度地图地理编码服务接口
+     * @return 百度地图地理编码服务接口
+     */
+    BaiduMapGeocoderService getBaiduMapGeocoderService();
+
+    /**
      * 发送get请求
      * @param url 请求地址
      * @param jsonParam json对象

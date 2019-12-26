@@ -18,12 +18,12 @@ public interface BaiduMapPlaceSuggestionService {
     /**
      * 地点输入提示V2.0
      */
-    String SUGGESTION = "http://api.map.baidu.com/place/v2/suggestion";
+    String SUGGESTION = "https://api.map.baidu.com/place/v2/suggestion";
 
     /**
      * 境外地点输入提示V1.0（服务权限需申请开通）
      */
-    String SUGGESTION_ABROAD = "http://api.map.baidu.com/place_abroad/v1/suggestion";
+    String SUGGESTION_ABROAD = "https://api.map.baidu.com/place_abroad/v1/suggestion";
 
     /**
      * 地点输入提示V2.0

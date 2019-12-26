@@ -68,7 +68,7 @@ public class BaiduMapPlaceSuggestionResult  implements Serializable {
      * poi经纬度坐标
      */
     @Data
-    private static class Location{
+    public static class Location{
 
         /**
          * 纬度
