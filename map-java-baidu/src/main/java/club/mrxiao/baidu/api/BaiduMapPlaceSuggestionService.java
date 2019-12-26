@@ -21,6 +21,11 @@ public interface BaiduMapPlaceSuggestionService {
     String SUGGESTION = "http://api.map.baidu.com/place/v2/suggestion";
 
     /**
+     * 境外地点输入提示V1.0（服务权限需申请开通）
+     */
+    String SUGGESTION_ABROAD = "http://api.map.baidu.com/place_abroad/v1/suggestion";
+
+    /**
      * 地点输入提示V2.0
      * @param request  百度地图地点输入提示服务请求对象
      * @return 检索结果
@@ -30,4 +35,15 @@ public interface BaiduMapPlaceSuggestionService {
      * </pre>
      */
     List<BaiduMapPlaceSuggestionResult> suggestion(BaiduMapPlaceSuggestionRequest request) throws BaiduMapErrorException;
+
+    /**
+     * 境外地点输入提示V1.0（服务权限需申请开通）
+     * @param request  百度地图地点输入提示服务请求对象
+     * @return 检索结果
+     * @throws BaiduMapErrorException 错误信息
+     * <pre>
+     *   <a href="http://lbsyun.baidu.com/index.php?title=webapi/place-suggestion-api-abroad">查看文档</a>
+     * </pre>
+     */
+    List<BaiduMapPlaceSuggestionResult> abroadSuggestion(BaiduMapPlaceSuggestionRequest request) throws BaiduMapErrorException;
 }

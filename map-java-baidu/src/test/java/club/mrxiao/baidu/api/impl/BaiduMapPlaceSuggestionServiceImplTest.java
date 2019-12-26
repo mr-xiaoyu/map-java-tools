@@ -23,6 +23,15 @@ public class BaiduMapPlaceSuggestionServiceImplTest {
         BaiduMapPlaceSuggestionRequest request = BaiduMapPlaceSuggestionRequest.builder()
                 .query("西坝河北里202号").region("北京市").build();
         List<BaiduMapPlaceSuggestionResult> results = service.getBaiduMapPlaceSuggestionService().suggestion(request);
-        log.info("\nresult:\n{}", JSON.toJSONString(results));
+        log.info("\n【result】:{}", JSON.toJSONString(results));
+    }
+
+    @Test
+    public void abroadSuggestionTest() throws BaiduMapErrorException {
+        BaiduMapService service = ServiceFactory.getService();
+        BaiduMapPlaceSuggestionRequest request = BaiduMapPlaceSuggestionRequest.builder()
+                .query("东京").region("东京").build();
+        List<BaiduMapPlaceSuggestionResult> results = service.getBaiduMapPlaceSuggestionService().abroadSuggestion(request);
+        log.info("\n【result】:{}", JSON.toJSONString(results));
     }
 }

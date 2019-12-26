@@ -26,4 +26,10 @@ public class BaiduMapPlaceSuggestionServiceImpl implements BaiduMapPlaceSuggesti
         String result = this.baiduMapService.get(SUGGESTION,request.toJson());
         return BaiduMapPlaceSuggestionResult.toList(result);
     }
+
+    @Override
+    public List<BaiduMapPlaceSuggestionResult> abroadSuggestion(BaiduMapPlaceSuggestionRequest request) throws BaiduMapErrorException {
+        String result = this.baiduMapService.get(SUGGESTION_ABROAD,request.toJson());
+        return BaiduMapPlaceSuggestionResult.toList(result);
+    }
 }
