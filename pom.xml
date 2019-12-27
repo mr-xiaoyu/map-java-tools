@@ -8,13 +8,15 @@
     <packaging>pom</packaging>
     <version>2.0.1.B</version>
     <name>map-java-tools</name>
-    <description>地图api封装</description>
+    <description>BAT地图服务api封装</description>
     <url>https://github.com/mr-xiaoyu/map-java-tools</url>
 
     <modules>
         <module>map-java-baidu</module>
         <module>map-java-common</module>
         <module>map-java-spring-boot-starters</module>
+        <module>map-java-amap</module>
+        <module>map-java-qq</module>
     </modules>
 
     <licenses>
