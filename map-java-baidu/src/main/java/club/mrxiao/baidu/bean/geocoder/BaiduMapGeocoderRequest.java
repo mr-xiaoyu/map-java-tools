@@ -26,15 +26,9 @@ public class BaiduMapGeocoderRequest implements Serializable {
      * <pre>
      * 是否必填： 是
      * 描述： 最多支持84个字节;可以输入两种样式的值，分别是：
-     * <pre>
      *      1、标准的结构化地址信息，如北京市海淀区上地十街十号 【推荐，地址结构越完整，解析精度越高】
-     *  </pre>
-     *  <pre>
      *      2、支持“*路与*路交叉口”描述方式，如北一环路和阜阳路的交叉路口
-     *  </pre>
-     *  <pre>
      *      第二种方式并不总是有返回结果，只有当地址库中存在该地址描述时才有返回。
-     *  </pre>
      * </pre>
      */
     private String address;

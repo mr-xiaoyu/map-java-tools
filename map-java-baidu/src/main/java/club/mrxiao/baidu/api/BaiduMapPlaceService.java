@@ -25,9 +25,16 @@ public interface BaiduMapPlaceService {
      */
     String PLACE_DETAIL = "https://api.map.baidu.com/place/v2/detail";
 
+//    /**
+//     * 地点检索(行政区划区域检索、圆形区域检索、矩形区域检索)
+//     * @param request  百度地图地点检索服务请求对象
+//     * @return 百度地图地点检索服务响应对象集合，分页时返回分页对象
+//     * @throws BaiduMapErrorException 错误信息
+//     */
     /**
      * 地点检索(行政区划区域检索、圆形区域检索、矩形区域检索)
-     * @param request  百度地图地点检索服务请求对象
+     * @param request 百度地图地点检索服务请求对象
+     * @param <T> 需使用{@link BaiduMapPlaceResult}集合 或者{@link club.mrxiao.common.bran.ResultDataTable}
      * @return 百度地图地点检索服务响应对象集合，分页时返回分页对象
      * @throws BaiduMapErrorException 错误信息
      * <pre>
