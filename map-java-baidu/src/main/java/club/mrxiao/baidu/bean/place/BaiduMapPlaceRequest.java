@@ -69,7 +69,7 @@ public class BaiduMapPlaceRequest implements Serializable {
      * 圆形区域检索中心点，不支持多个点
      * <pre>
      * 是否必填： 是
-     * 描述： lat<纬度>,lng<经度>
+     * 描述： lat(纬度),lng(经度)
      * </pre>
      */
     private String location;
