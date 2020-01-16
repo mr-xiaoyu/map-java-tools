@@ -15,8 +15,8 @@
         <module>map-java-baidu</module>
         <module>map-java-common</module>
         <module>map-java-spring-boot-starters</module>
-        <module>map-java-amap</module>
-        <module>map-java-qq</module>
+<!--        <module>map-java-amap</module>-->
+<!--        <module>map-java-qq</module>-->
     </modules>
 
     <licenses>
