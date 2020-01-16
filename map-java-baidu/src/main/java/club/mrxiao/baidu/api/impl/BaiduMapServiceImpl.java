@@ -41,7 +41,6 @@ public class BaiduMapServiceImpl implements BaiduMapService {
     @Override
     public String get(String url,JSONObject jsonParam) throws BaiduMapErrorException {
         String queryString = this.toQueryString(jsonParam);
-        queryString = StringUtil.utf8encode(queryString);
         url = urlJoint(url);
         if(StrUtil.isNotBlank(queryString)){
             url = url+queryString;
@@ -78,7 +77,11 @@ public class BaiduMapServiceImpl implements BaiduMapService {
     private String toQueryString(JSONObject data) {
         StringBuilder queryString = new StringBuilder();
         for (String str:data.keySet()) {
-            queryString.append("&").append(str).append("=").append(data.get(str));
+            Object item = data.get(str);
+            if (item instanceof String) {
+                item = StringUtil.utf8encode(item.toString());
+            }
+            queryString.append("&").append(str).append("=").append(item);
         }
         return queryString.toString();
     }
