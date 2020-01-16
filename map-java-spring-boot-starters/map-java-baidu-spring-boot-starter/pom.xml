@@ -5,7 +5,7 @@
     <parent>
         <artifactId>map-java-spring-boot-starters</artifactId>
         <groupId>club.mrxiao</groupId>
-        <version>2.0.1.B</version>
+        <version>2.0.2.B</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>map-java-baidu-spring-boot-starter</artifactId>
