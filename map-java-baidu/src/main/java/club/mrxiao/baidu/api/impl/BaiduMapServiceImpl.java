@@ -4,6 +4,7 @@ import club.mrxiao.baidu.api.*;
 import club.mrxiao.baidu.config.BaiduMapConfig;
 import club.mrxiao.common.error.BaiduMapError;
 import club.mrxiao.common.error.BaiduMapErrorException;
+import club.mrxiao.common.utils.StringUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.log.Log;
@@ -40,6 +41,7 @@ public class BaiduMapServiceImpl implements BaiduMapService {
     @Override
     public String get(String url,JSONObject jsonParam) throws BaiduMapErrorException {
         String queryString = this.toQueryString(jsonParam);
+        queryString = StringUtil.utf8encode(queryString);
         url = urlJoint(url);
         if(StrUtil.isNotBlank(queryString)){
             url = url+queryString;
