@@ -1,1 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=club.mrxiao.spring.boot.starter.baidu.config.BaiduMapAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+club.mrxiao.spring.boot.starter.baidu.config.BaiduMapAutoConfiguration

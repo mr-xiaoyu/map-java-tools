@@ -7,7 +7,6 @@ import club.mrxiao.spring.boot.starter.baidu.properties.BaiduMapProperties;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +20,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConditionalOnClass(BaiduMapService.class)
 @EnableConfigurationProperties(BaiduMapProperties.class)
-@ConditionalOnProperty(prefix = "map.baidu", value = "enabled", matchIfMissing = true)
 public class BaiduMapAutoConfiguration {
 
     private BaiduMapProperties properties;
