@@ -1,5 +1,7 @@
 package club.mrxiao.amap.bean.geocode;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import lombok.Builder;
 import lombok.Data;
 
@@ -12,7 +14,7 @@ import java.io.Serializable;
  */
 @Data
 @Builder
-public class AmapGeocodeRequest implements Serializable {
+public class AmapGeocodeGeoRequest implements Serializable {
 
     private static final long serialVersionUID = 6256850090831595132L;
 
@@ -44,4 +46,10 @@ public class AmapGeocodeRequest implements Serializable {
      * </pre>
      */
     private Boolean batch;
+
+
+    public JSONObject toJson(){
+        String beanString = JSON.toJSONString(this);
+        return JSONObject.parseObject(beanString);
+    }
 }

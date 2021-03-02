@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @since 2019-12-27
  */
 @Data
-public class AmapGeocodeResult implements Serializable {
+public class AmapGeocodeGeoResult implements Serializable {
 
     private static final long serialVersionUID = -5872252292442519223L;
 }
