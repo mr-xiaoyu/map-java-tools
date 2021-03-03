@@ -23,7 +23,7 @@ public class AmapWeatherInfoRequest implements Serializable {
     /**
      * 城市编码
      * <pre>
-     *     是否必填： 是<br/>
+     *     是否必填： 是
      *     输入城市的adcode，adcode信息可参考城市<a href="https://lbs.amap.com/api/webservice/download">编码表</a>
      * </pre>
      */
@@ -32,10 +32,10 @@ public class AmapWeatherInfoRequest implements Serializable {
     /**
      * 气象类型
      * <pre>
-     *    是否必填： 否<br/>
-     *    可选值：base/all<br/>
-     *    base:返回实况天气<br/>
-     *    all:返回预报天气<br/>
+     *    是否必填： 否
+     *    可选值：base/all
+     *    base:返回实况天气
+     *    all:返回预报天气
      * </pre>
      *
      */
