@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @since 2019-12-26
  */
 @Data
-@ConfigurationProperties(prefix = "map.baidu")
+@ConfigurationProperties(prefix = "xytool.map.baidu")
 public class BaiduMapProperties {
 
     /**
