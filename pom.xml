@@ -46,7 +46,7 @@
         <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
 
         <lombok.version>1.18.8</lombok.version>
-        <hutool.version>4.6.2</hutool.version>
+        <hutool.version>5.7.19</hutool.version>
         <fastjson.version>1.2.59</fastjson.version>
         <slf4j-api.version>1.7.24</slf4j-api.version>
     </properties>
