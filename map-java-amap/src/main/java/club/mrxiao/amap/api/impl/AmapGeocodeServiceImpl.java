@@ -4,7 +4,12 @@ import club.mrxiao.amap.api.AmapGeocodeService;
 import club.mrxiao.amap.api.AmapService;
 import club.mrxiao.amap.bean.geocode.AmapGeocodeGeoRequest;
 import club.mrxiao.amap.bean.geocode.AmapGeocodeGeoResult;
+import club.mrxiao.amap.bean.geocode.AmapGeocodeReGeoRequest;
+import club.mrxiao.amap.bean.geocode.AmapGeocodeReGeoResult;
+import club.mrxiao.common.error.AmapErrorException;
 import lombok.AllArgsConstructor;
+
+import java.util.List;
 
 /**
  * <pre>
@@ -19,10 +24,21 @@ public class AmapGeocodeServiceImpl implements AmapGeocodeService {
     private AmapService amapService;
 
     @Override
-    public AmapGeocodeGeoResult geocodeGeo(AmapGeocodeGeoRequest amapGeocodeGeoRequest) {
-
+    public List<AmapGeocodeGeoResult> geocodeGeo(AmapGeocodeGeoRequest amapGeocodeGeoRequest) throws AmapErrorException {
         String result = this.amapService.get(GEO,amapGeocodeGeoRequest.toJson());
-        System.out.println(result);
-        return null;
+        return AmapGeocodeGeoResult.toList(result);
+    }
+
+    @Override
+    public AmapGeocodeReGeoResult geocodeReGeo(AmapGeocodeReGeoRequest amapGeocodeReGeoRequest) throws AmapErrorException {
+        String result = this.amapService.get(RE_GEO,amapGeocodeReGeoRequest.toJson());
+        return AmapGeocodeReGeoResult.fromJson(result);
+    }
+
+    @Override
+    public List<AmapGeocodeReGeoResult> batchGeocodeReGeo(AmapGeocodeReGeoRequest amapGeocodeReGeoRequest) throws AmapErrorException {
+        amapGeocodeReGeoRequest.setBatch(true);
+        String result = this.amapService.get(RE_GEO,amapGeocodeReGeoRequest.toJson());
+        return AmapGeocodeReGeoResult.toList(result);
     }
 }

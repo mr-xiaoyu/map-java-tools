@@ -1,6 +1,7 @@
 package club.mrxiao.amap.api;
 
 import club.mrxiao.amap.config.AmapConfig;
+import club.mrxiao.common.error.AmapErrorException;
 import com.alibaba.fastjson.JSONObject;
 
 /**
@@ -37,6 +38,7 @@ public interface AmapService {
      * @param url 请求地址
      * @param jsonParam json对象
      * @return 请求结果
+     * @throws AmapErrorException 错误信息
      */
-    String get(String url, JSONObject jsonParam);
+    String get(String url, JSONObject jsonParam) throws AmapErrorException;
 }
