@@ -2,9 +2,13 @@ package club.mrxiao.amap.api.impl;
 
 import club.mrxiao.amap.api.AmapService;
 import club.mrxiao.amap.api.AmapWeatherService;
+import club.mrxiao.amap.bean.weather.AmapWeatherForecastResult;
 import club.mrxiao.amap.bean.weather.AmapWeatherInfoRequest;
-import club.mrxiao.amap.bean.weather.AmapWeatherInfoResult;
+import club.mrxiao.amap.bean.weather.AmapWeatherLiveResult;
+import club.mrxiao.common.error.AmapErrorException;
 import lombok.AllArgsConstructor;
+
+import java.util.List;
 
 /**
  * <pre>
@@ -19,9 +23,16 @@ public class AmapWeatherServiceImpl implements AmapWeatherService {
     private AmapService amapService;
 
     @Override
-    public AmapWeatherInfoResult weatherInfo(AmapWeatherInfoRequest request) {
+    public List<AmapWeatherLiveResult> liveWeatherInfo(AmapWeatherInfoRequest request) throws AmapErrorException {
+        request.setExtensions("base");
         String result = this.amapService.get(INFO,request.toJson());
-        System.out.println(result);
-        return null;
+        return AmapWeatherLiveResult.toList(result);
+    }
+
+    @Override
+    public List<AmapWeatherForecastResult> forecastWeatherInfo(AmapWeatherInfoRequest request) throws AmapErrorException {
+        request.setExtensions("all");
+        String result = this.amapService.get(INFO,request.toJson());
+        return AmapWeatherForecastResult.toList(result);
     }
 }

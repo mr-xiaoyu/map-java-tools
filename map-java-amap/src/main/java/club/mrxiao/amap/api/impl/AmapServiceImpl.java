@@ -4,9 +4,13 @@ import club.mrxiao.amap.api.AmapGeocodeService;
 import club.mrxiao.amap.api.AmapService;
 import club.mrxiao.amap.api.AmapWeatherService;
 import club.mrxiao.amap.config.AmapConfig;
+import club.mrxiao.common.error.AmapError;
+import club.mrxiao.common.error.AmapErrorException;
 import club.mrxiao.common.utils.StringUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import com.alibaba.fastjson.JSONObject;
 
 /**
@@ -17,6 +21,12 @@ import com.alibaba.fastjson.JSONObject;
  * @since 2021-01-12
  */
 public class AmapServiceImpl implements AmapService {
+
+    private static final String SUCCESS_STATUS = "1";
+
+    private static final String SUCCESS_CODE = "10000";
+
+    private final Log log = LogFactory.get(this.getClass().getName());
 
     private AmapConfig amapConfig;
     private AmapGeocodeService amapGeocodeService = new AmapGeocodeServiceImpl(this);
@@ -39,13 +49,18 @@ public class AmapServiceImpl implements AmapService {
     }
 
     @Override
-    public String get(String url, JSONObject jsonParam) {
+    public String get(String url, JSONObject jsonParam) throws AmapErrorException {
         String queryString = this.toQueryString(jsonParam);
         url = urlJoint(url);
         if(StrUtil.isNotBlank(queryString)){
             url = url+queryString;
         }
         String result = HttpUtil.get(url);
+        log.debug("\n【请求地址】: {}\n【响应数据】：{}", url, result);
+        AmapError error = AmapError.fromJson(result);
+        if(!SUCCESS_STATUS.equals(error.getStatus()) || !SUCCESS_CODE.equals(error.getInfocode())){
+            throw new AmapErrorException(error);
+        }
         return result;
     }
 
