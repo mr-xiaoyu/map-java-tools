@@ -33,6 +33,9 @@ public interface AmapGeocodeService{
      * @param amapGeocodeGeoRequest {@link AmapGeocodeGeoRequest}
      * @return {@link AmapGeocodeGeoResult}
      * @throws AmapErrorException 错误信息
+     * <pre>
+     *   <a href="https://lbs.amap.com/api/webservice/guide/api/georegeo">查看文档</a>
+     * </pre>
      */
     List<AmapGeocodeGeoResult> geocodeGeo(AmapGeocodeGeoRequest amapGeocodeGeoRequest) throws AmapErrorException;
 
@@ -41,6 +44,9 @@ public interface AmapGeocodeService{
      * @param amapGeocodeReGeoRequest {@link AmapGeocodeReGeoRequest}
      * @return {@link AmapGeocodeReGeoResult}
      * @throws AmapErrorException 错误信息
+     * <pre>
+     *   <a href="https://lbs.amap.com/api/webservice/guide/api/georegeo">查看文档</a>
+     * </pre>
      */
     AmapGeocodeReGeoResult geocodeReGeo(AmapGeocodeReGeoRequest amapGeocodeReGeoRequest) throws AmapErrorException;
 
@@ -49,6 +55,9 @@ public interface AmapGeocodeService{
      * @param amapGeocodeReGeoRequest {@link AmapGeocodeReGeoRequest}
      * @return {@link AmapGeocodeReGeoResult}
      * @throws AmapErrorException 错误信息
+     * <pre>
+     *   <a href="https://lbs.amap.com/api/webservice/guide/api/georegeo">查看文档</a>
+     * </pre>
      */
     List<AmapGeocodeReGeoResult> batchGeocodeReGeo(AmapGeocodeReGeoRequest amapGeocodeReGeoRequest) throws AmapErrorException;
 }

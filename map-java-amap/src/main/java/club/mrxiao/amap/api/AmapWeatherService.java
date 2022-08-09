@@ -27,6 +27,9 @@ public interface AmapWeatherService {
      * @param request {@link AmapWeatherInfoRequest}
      * @return {@link AmapWeatherLiveResult}
      * @throws AmapErrorException 错误信息
+     * <pre>
+     *   <a href="https://lbs.amap.com/api/webservice/guide/api/weatherinfo">查看文档</a>
+     * </pre>
      */
     List<AmapWeatherLiveResult> liveWeatherInfo(AmapWeatherInfoRequest request) throws AmapErrorException;
 
@@ -35,6 +38,9 @@ public interface AmapWeatherService {
      * @param request {@link AmapWeatherInfoRequest}
      * @return {@link AmapWeatherForecastResult}
      * @throws AmapErrorException 错误信息
+     * <pre>
+     *   <a href="https://lbs.amap.com/api/webservice/guide/api/weatherinfo">查看文档</a>
+     * </pre>
      */
     List<AmapWeatherForecastResult> forecastWeatherInfo(AmapWeatherInfoRequest request) throws AmapErrorException;
 }

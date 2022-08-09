@@ -32,6 +32,11 @@ public interface AmapService {
      */
     AmapWeatherService getAmapWeatherService();
 
+    /**
+     * 获取行政区域查询接口
+     * @return 行政区域查询接口
+     */
+    AmapDistrictService getAmapDistrictService();
 
     /**
      * 发送get请求

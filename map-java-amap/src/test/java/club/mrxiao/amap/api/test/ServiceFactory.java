@@ -8,7 +8,7 @@ public class ServiceFactory {
 
     public static AmapService getAmapService(){
         AmapConfig config = new AmapConfig();
-        config.setKey("56485da3e807f597e062761bb18b2729");
+        config.setKey("--");
         AmapService service = new AmapServiceImpl();
         service.setAmapConfig(config);
         return service;

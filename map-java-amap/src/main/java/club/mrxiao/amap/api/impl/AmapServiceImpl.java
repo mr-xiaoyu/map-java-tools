@@ -1,5 +1,6 @@
 package club.mrxiao.amap.api.impl;
 
+import club.mrxiao.amap.api.AmapDistrictService;
 import club.mrxiao.amap.api.AmapGeocodeService;
 import club.mrxiao.amap.api.AmapService;
 import club.mrxiao.amap.api.AmapWeatherService;
@@ -31,6 +32,7 @@ public class AmapServiceImpl implements AmapService {
     private AmapConfig amapConfig;
     private AmapGeocodeService amapGeocodeService = new AmapGeocodeServiceImpl(this);
     private AmapWeatherService amapWeatherService = new AmapWeatherServiceImpl(this);
+    private AmapDistrictService amapDistrictService = new AmapDistrictServiceImpl(this);
 
 
     @Override
@@ -46,6 +48,11 @@ public class AmapServiceImpl implements AmapService {
     @Override
     public AmapWeatherService getAmapWeatherService() {
         return this.amapWeatherService;
+    }
+
+    @Override
+    public AmapDistrictService getAmapDistrictService() {
+        return this.amapDistrictService;
     }
 
     @Override
