@@ -59,7 +59,7 @@ public class AmapGeocodeReGeoResult implements Serializable {
      * 地址元素列表
      */
     @Data
-    private static class AddressComponent{
+    public static class AddressComponent{
 
         /**
          * 坐标点所在省名称
@@ -134,7 +134,7 @@ public class AmapGeocodeReGeoResult implements Serializable {
      * 社区信息列表
      */
     @Data
-    private static class Neighborhood{
+    public static class Neighborhood{
 
         /**
          * 社区名称
@@ -157,7 +157,7 @@ public class AmapGeocodeReGeoResult implements Serializable {
      * 楼信息列表
      */
     @Data
-    private static class Building{
+    public static class Building{
 
         /**
          * 建筑名称
@@ -180,7 +180,7 @@ public class AmapGeocodeReGeoResult implements Serializable {
      * 门牌信息列表
      */
     @Data
-    private static class StreetNumber{
+    public static class StreetNumber{
 
         /**
          * 街道名称
@@ -227,7 +227,7 @@ public class AmapGeocodeReGeoResult implements Serializable {
      * 道路信息
      */
     @Data
-    private static class Road {
+    public static class Road {
 
         /**
          * 道路id
@@ -265,7 +265,7 @@ public class AmapGeocodeReGeoResult implements Serializable {
      * 道路交叉口
      */
     @Data
-    private static class Roadinter {
+    public static class Roadinter {
 
         /**
          * 交叉路口到请求坐标的距离
@@ -317,7 +317,7 @@ public class AmapGeocodeReGeoResult implements Serializable {
      * poi 信息
      */
     @Data
-    private static class Poi {
+    public static class Poi {
 
         /**
          * poi的id
@@ -375,7 +375,7 @@ public class AmapGeocodeReGeoResult implements Serializable {
      * aoi信息
      */
     @Data
-    private static class Aoi {
+    public static class Aoi {
 
         /**
          * 所属 aoi的id

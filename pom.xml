@@ -6,7 +6,7 @@
     <groupId>club.mrxiao</groupId>
     <artifactId>map-java-tools</artifactId>
     <packaging>pom</packaging>
-    <version>2.0.5</version>
+    <version>2.0.6</version>
     <name>map-java-tools</name>
     <description>高德、百度地图服务api封装</description>
     <url>https://github.com/mr-xiaoyu/map-java-tools</url>
