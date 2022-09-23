@@ -47,7 +47,7 @@ public class AmapWeatherForecastResult implements Serializable {
      * 预报元素
      */
     @Data
-    private static class Cast {
+    public static class Cast {
         /**
          * 日期
          */

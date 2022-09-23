@@ -84,7 +84,7 @@ public class BaiduMapPlaceResult implements Serializable {
      * poi的扩展信息
      */
     @Data
-    private static class DetailInfo{
+    public static class DetailInfo{
 
         /**
          * 距离中心点的距离，圆形区域检索时返回
