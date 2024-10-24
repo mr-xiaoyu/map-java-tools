@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <version>3.0.1</version>
     <name>map-java-tools</name>
-    <description>高德、百度地图服务api封装</description>
+    <description>高德、百度和腾讯地图服务api封装</description>
     <url>https://github.com/mr-xiaoyu/map-java-tools</url>
 
     <modules>
