@@ -5,7 +5,7 @@
     <parent>
         <artifactId>map-java-tools</artifactId>
         <groupId>club.mrxiao</groupId>
-        <version>2.0.6</version>
+        <version>3.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -27,6 +27,11 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-http</artifactId>
+        </dependency>
+        <!-- hutool-log -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-log</artifactId>
         </dependency>
         <!-- fastjson -->
         <dependency>

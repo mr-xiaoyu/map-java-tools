@@ -19,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BaiduMapPlaceSuggestionServiceImpl implements BaiduMapPlaceSuggestionService {
 
-    private BaiduMapService baiduMapService;
+    private final BaiduMapService baiduMapService;
 
     @Override
     public List<BaiduMapPlaceSuggestionResult> suggestion(BaiduMapPlaceSuggestionRequest request) throws BaiduMapErrorException {

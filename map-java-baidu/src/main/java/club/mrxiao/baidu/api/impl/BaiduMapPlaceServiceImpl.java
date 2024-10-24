@@ -21,7 +21,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BaiduMapPlaceServiceImpl implements BaiduMapPlaceService {
 
-    private BaiduMapService baiduMapService;
+    private final BaiduMapService baiduMapService;
 
     @Override
     public <T> T placeSearch(BaiduMapPlaceRequest request) throws BaiduMapErrorException {

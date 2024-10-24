@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class BaiduMapGeocoderServiceImpl implements BaiduMapGeocoderService {
 
-    private BaiduMapService baiduMapService;
+    private final BaiduMapService baiduMapService;
 
     @Override
     public BaiduMapGeocoderResult geocoding(BaiduMapGeocoderRequest request) throws BaiduMapErrorException {

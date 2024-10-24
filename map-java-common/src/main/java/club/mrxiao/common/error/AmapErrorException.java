@@ -8,7 +8,7 @@ public class AmapErrorException extends Exception {
 
     private static final long serialVersionUID = 1166926691581981805L;
 
-    private AmapError amapError;
+    private final AmapError amapError;
 
     public AmapErrorException(AmapError amapError) {
         super(amapError.toString());

@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 public class AmapWeatherServiceImpl implements AmapWeatherService {
 
-    private AmapService amapService;
+    private final AmapService amapService;
 
     @Override
     public List<AmapWeatherLiveResult> liveWeatherInfo(AmapWeatherInfoRequest request) throws AmapErrorException {

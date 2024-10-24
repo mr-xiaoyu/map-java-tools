@@ -30,9 +30,9 @@ public class AmapServiceImpl implements AmapService {
     private final Log log = LogFactory.get(this.getClass().getName());
 
     private AmapConfig amapConfig;
-    private AmapGeocodeService amapGeocodeService = new AmapGeocodeServiceImpl(this);
-    private AmapWeatherService amapWeatherService = new AmapWeatherServiceImpl(this);
-    private AmapDistrictService amapDistrictService = new AmapDistrictServiceImpl(this);
+    private final AmapGeocodeService amapGeocodeService = new AmapGeocodeServiceImpl(this);
+    private final AmapWeatherService amapWeatherService = new AmapWeatherServiceImpl(this);
+    private final AmapDistrictService amapDistrictService = new AmapDistrictServiceImpl(this);
 
 
     @Override
