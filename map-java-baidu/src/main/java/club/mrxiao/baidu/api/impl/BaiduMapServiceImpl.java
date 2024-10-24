@@ -23,10 +23,10 @@ public class BaiduMapServiceImpl implements BaiduMapService {
     private final Log log = LogFactory.get(this.getClass().getName());
 
     private BaiduMapConfig baiduMapConfig;
-    private BaiduMapPlaceSuggestionService placeSuggestionService = new BaiduMapPlaceSuggestionServiceImpl(this);
-    private BaiduMapGeocoderService geocoderService = new BaiduMapGeocoderServiceImpl(this);
-    private BaiduMapPlaceService placeService = new BaiduMapPlaceServiceImpl(this);
-    private BaiduMapGeoconvService geoconvService = new BaiduMapGeoconvServiceImpl(this);
+    private final BaiduMapPlaceSuggestionService placeSuggestionService = new BaiduMapPlaceSuggestionServiceImpl(this);
+    private final BaiduMapGeocoderService geocoderService = new BaiduMapGeocoderServiceImpl(this);
+    private final BaiduMapPlaceService placeService = new BaiduMapPlaceServiceImpl(this);
+    private final BaiduMapGeoconvService geoconvService = new BaiduMapGeoconvServiceImpl(this);
 
     @Override
     public BaiduMapConfig getBaiduMapConfig() {

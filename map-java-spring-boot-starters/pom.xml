@@ -5,7 +5,7 @@
     <parent>
         <artifactId>map-java-tools</artifactId>
         <groupId>club.mrxiao</groupId>
-        <version>2.0.6</version>
+        <version>3.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>map-java-spring-boot-starters</artifactId>
@@ -15,6 +15,7 @@
     <modules>
         <module>map-java-baidu-spring-boot-starter</module>
         <module>map-java-amap-spring-boot-starter</module>
+        <module>map-java-qq-spring-boot-starter</module>
     </modules>
 
     <properties>

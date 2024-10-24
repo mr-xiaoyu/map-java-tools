@@ -21,7 +21,7 @@ import java.util.List;
 @AllArgsConstructor
 public class AmapGeocodeServiceImpl implements AmapGeocodeService {
 
-    private AmapService amapService;
+    private final AmapService amapService;
 
     @Override
     public List<AmapGeocodeGeoResult> geocodeGeo(AmapGeocodeGeoRequest amapGeocodeGeoRequest) throws AmapErrorException {

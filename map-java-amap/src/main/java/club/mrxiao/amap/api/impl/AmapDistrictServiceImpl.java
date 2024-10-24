@@ -19,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class AmapDistrictServiceImpl implements AmapDistrictService {
 
-    private AmapService amapService;
+    private final AmapService amapService;
 
     @Override
     public List<AmapDistrictResult> query(AmapDistrictRequest request) throws AmapErrorException {

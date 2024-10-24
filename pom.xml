@@ -6,16 +6,17 @@
     <groupId>club.mrxiao</groupId>
     <artifactId>map-java-tools</artifactId>
     <packaging>pom</packaging>
-    <version>2.0.6</version>
+    <version>3.0.1</version>
     <name>map-java-tools</name>
     <description>高德、百度地图服务api封装</description>
     <url>https://github.com/mr-xiaoyu/map-java-tools</url>
 
     <modules>
         <module>map-java-baidu</module>
+        <module>map-java-amap</module>
+        <module>map-java-qq</module>
         <module>map-java-common</module>
         <module>map-java-spring-boot-starters</module>
-        <module>map-java-amap</module>
     </modules>
 
     <licenses>
@@ -39,14 +40,13 @@
     </developers>
 
     <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
-
         <lombok.version>1.18.8</lombok.version>
-        <hutool.version>4.6.2</hutool.version>
-        <fastjson.version>1.2.59</fastjson.version>
+        <hutool.version>5.8.30</hutool.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <slf4j-api.version>1.7.24</slf4j-api.version>
     </properties>
 
@@ -55,7 +55,7 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.12</version>
+                <version>4.13.1</version>
                 <scope>test</scope>
             </dependency>
             <!-- lombok -->
@@ -75,6 +75,12 @@
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-http</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <!-- hutool-log -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-log</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
             <!-- fastjson -->

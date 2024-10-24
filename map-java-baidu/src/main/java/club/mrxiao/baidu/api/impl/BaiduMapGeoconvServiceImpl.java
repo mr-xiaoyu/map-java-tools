@@ -19,8 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BaiduMapGeoconvServiceImpl implements BaiduMapGeoconvService {
 
-    private BaiduMapService baiduMapService;
-
+    private final BaiduMapService baiduMapService;
 
     @Override
     public List<BaiduMapGeoconvResult> geoconv(BaiduMapGeoconvRequest request) throws BaiduMapErrorException {

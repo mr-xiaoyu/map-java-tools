@@ -8,7 +8,7 @@ public class BaiduMapErrorException extends Exception {
 
     private static final long serialVersionUID = 4055391380144098272L;
 
-    private BaiduMapError baiduMapError;
+    private final BaiduMapError baiduMapError;
 
     public BaiduMapErrorException(BaiduMapError baiduMapError) {
         super(baiduMapError.toString());
