@@ -38,6 +38,12 @@ public interface QqMapService {
     QqMapAddressService getQqMapAddressService();
 
     /**
+     * 获取坐标服务
+     * @return {@link QqMapCoordService}
+     */
+    QqMapCoordService getQqMapCoordService();
+
+    /**
      * 发送get请求
      * @param url 请求地址
      * @param jsonParam json对象

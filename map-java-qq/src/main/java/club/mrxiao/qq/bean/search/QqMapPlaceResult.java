@@ -1,4 +1,4 @@
-package club.mrxiao.qq.bean.place;
+package club.mrxiao.qq.bean.search;
 
 import club.mrxiao.qq.bean.AdInfo;
 import club.mrxiao.qq.bean.Location;

@@ -3,10 +3,12 @@ package club.mrxiao.qq.api.impl;
 import club.mrxiao.common.error.QqMapErrorException;
 import club.mrxiao.qq.api.QqMapSearchService;
 import club.mrxiao.qq.api.QqMapService;
-import club.mrxiao.qq.bean.district.QqMapDistrictRequest;
-import club.mrxiao.qq.bean.district.QqMapDistrictResult;
-import club.mrxiao.qq.bean.place.QqMapPlaceRequest;
-import club.mrxiao.qq.bean.place.QqMapPlaceResult;
+import club.mrxiao.qq.bean.search.QqMapDistrictRequest;
+import club.mrxiao.qq.bean.search.QqMapDistrictResult;
+import club.mrxiao.qq.bean.search.QqMapPlaceRequest;
+import club.mrxiao.qq.bean.search.QqMapPlaceResult;
+import club.mrxiao.qq.bean.search.QqMapSuggestionRequest;
+import club.mrxiao.qq.bean.search.QqMapSuggestionResult;
 import lombok.AllArgsConstructor;
 
 /**
@@ -47,5 +49,11 @@ public class QqMapSearchServiceImpl implements QqMapSearchService {
     public QqMapDistrictResult districtGetChildren(QqMapDistrictRequest request) throws QqMapErrorException {
         String result = this.qqMapService.get(DISTRICT_GET_CHILDREN,request.toJson());
         return QqMapDistrictResult.fromJson(result);
+    }
+
+    @Override
+    public QqMapSuggestionResult suggestion(QqMapSuggestionRequest request) throws QqMapErrorException {
+        String result = this.qqMapService.get(SUGGESTION,request.toJson());
+        return QqMapSuggestionResult.fromJson(result);
     }
 }

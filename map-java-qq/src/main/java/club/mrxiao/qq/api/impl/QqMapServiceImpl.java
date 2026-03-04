@@ -3,9 +3,7 @@ package club.mrxiao.qq.api.impl;
 import club.mrxiao.common.error.QqMapError;
 import club.mrxiao.common.error.QqMapErrorException;
 import club.mrxiao.common.utils.StringUtil;
-import club.mrxiao.qq.api.QqMapAddressService;
-import club.mrxiao.qq.api.QqMapSearchService;
-import club.mrxiao.qq.api.QqMapService;
+import club.mrxiao.qq.api.*;
 import club.mrxiao.qq.config.QqMapConfig;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
@@ -30,6 +28,7 @@ public class QqMapServiceImpl implements QqMapService {
 
     private final QqMapSearchService qqMapSearchService = new QqMapSearchServiceImpl(this);
     private final QqMapAddressService qqMapAddressService = new QqMapAddressServiceImpl(this);
+    private final QqMapCoordService qqMapCoordService = new QqMapCoordServiceImpl(this);
 
     @Override
     public void setQqMapConfig(QqMapConfig config) {
@@ -50,6 +49,12 @@ public class QqMapServiceImpl implements QqMapService {
     public QqMapAddressService getQqMapAddressService() {
         return this.qqMapAddressService;
     }
+
+    @Override
+    public QqMapCoordService getQqMapCoordService() {
+        return this.qqMapCoordService;
+    }
+
 
     @Override
     public String get(String url, JSONObject jsonParam) throws QqMapErrorException {

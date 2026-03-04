@@ -1,4 +1,4 @@
-package club.mrxiao.qq.bean.geocoder;
+package club.mrxiao.qq.bean.address;
 
 import club.mrxiao.qq.bean.AdInfo;
 import club.mrxiao.qq.bean.Location;

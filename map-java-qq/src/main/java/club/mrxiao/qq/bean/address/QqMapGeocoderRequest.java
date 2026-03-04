@@ -1,4 +1,4 @@
-package club.mrxiao.qq.bean.geocoder;
+package club.mrxiao.qq.bean.address;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
