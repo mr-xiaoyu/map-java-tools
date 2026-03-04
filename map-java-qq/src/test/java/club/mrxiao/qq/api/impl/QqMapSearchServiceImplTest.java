@@ -2,10 +2,12 @@ package club.mrxiao.qq.api.impl;
 
 import club.mrxiao.common.error.QqMapErrorException;
 import club.mrxiao.qq.api.QqMapService;
-import club.mrxiao.qq.bean.district.QqMapDistrictRequest;
-import club.mrxiao.qq.bean.district.QqMapDistrictResult;
-import club.mrxiao.qq.bean.place.QqMapPlaceRequest;
-import club.mrxiao.qq.bean.place.QqMapPlaceResult;
+import club.mrxiao.qq.bean.search.QqMapDistrictRequest;
+import club.mrxiao.qq.bean.search.QqMapDistrictResult;
+import club.mrxiao.qq.bean.search.QqMapPlaceRequest;
+import club.mrxiao.qq.bean.search.QqMapPlaceResult;
+import club.mrxiao.qq.bean.search.QqMapSuggestionRequest;
+import club.mrxiao.qq.bean.search.QqMapSuggestionResult;
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
 import com.alibaba.fastjson.JSON;
@@ -47,9 +49,20 @@ public class QqMapSearchServiceImplTest {
     public void districtGetChildren() throws QqMapErrorException {
         QqMapService service = ServiceFactory.getService();
         QqMapDistrictRequest request = QqMapDistrictRequest.builder()
-                .id("469021")
+                .id("500000")
                 .build();
         QqMapDistrictResult result = service.getQqMapSearchService().districtGetChildren(request);
+        log.info("result: \n{}", JSON.toJSONString(result));
+    }
+
+    @Test
+    public void suggestion() throws QqMapErrorException {
+        QqMapService service = ServiceFactory.getService();
+        QqMapSuggestionRequest request = QqMapSuggestionRequest.builder()
+                .keyword("和泰园C")
+                .addressFormat("short")
+                .build();
+        QqMapSuggestionResult result = service.getQqMapSearchService().suggestion(request);
         log.info("result: \n{}", JSON.toJSONString(result));
     }
 }

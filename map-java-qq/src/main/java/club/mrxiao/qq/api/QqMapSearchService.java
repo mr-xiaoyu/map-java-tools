@@ -1,10 +1,12 @@
 package club.mrxiao.qq.api;
 
 import club.mrxiao.common.error.QqMapErrorException;
-import club.mrxiao.qq.bean.district.QqMapDistrictRequest;
-import club.mrxiao.qq.bean.district.QqMapDistrictResult;
-import club.mrxiao.qq.bean.place.QqMapPlaceRequest;
-import club.mrxiao.qq.bean.place.QqMapPlaceResult;
+import club.mrxiao.qq.bean.search.QqMapDistrictRequest;
+import club.mrxiao.qq.bean.search.QqMapDistrictResult;
+import club.mrxiao.qq.bean.search.QqMapPlaceRequest;
+import club.mrxiao.qq.bean.search.QqMapPlaceResult;
+import club.mrxiao.qq.bean.search.QqMapSuggestionRequest;
+import club.mrxiao.qq.bean.search.QqMapSuggestionResult;
 
 /**
  * <pre>
@@ -20,6 +22,8 @@ public interface QqMapSearchService {
     String DISTRICT_LIST = "https://apis.map.qq.com/ws/district/v1/list";
 
     String DISTRICT_GET_CHILDREN = "https://apis.map.qq.com/ws/district/v1/getchildren";
+
+    String SUGGESTION = "https://apis.map.qq.com/ws/place/v1/suggestion";
 
     /**
      * 搜索
@@ -53,5 +57,14 @@ public interface QqMapSearchService {
      * @throws QqMapErrorException 异常
      * @see <a href="https://lbs.qq.com/service/webService/webServiceGuide/search/webServiceDistrict">行政区划</a>
      */
-    QqMapDistrictResult districtGetChildren(QqMapDistrictRequest request) throws QqMapErrorException;;
+    QqMapDistrictResult districtGetChildren(QqMapDistrictRequest request) throws QqMapErrorException;
+
+    /**
+     * 关键词输入提示
+     * @param request {@link QqMapSuggestionRequest}
+     * @return {@link QqMapSuggestionResult}
+     * @throws QqMapErrorException 异常
+     * @see <a href="https://lbs.qq.com/service/webService/webServiceGuide/search/webServiceSuggestion">关键词输入提示</a>
+     */
+    QqMapSuggestionResult suggestion(QqMapSuggestionRequest request) throws QqMapErrorException;
 }

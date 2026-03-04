@@ -1,4 +1,4 @@
-package club.mrxiao.qq.bean.district;
+package club.mrxiao.qq.bean.search;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
