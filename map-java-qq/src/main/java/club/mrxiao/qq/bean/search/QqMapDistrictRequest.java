@@ -38,6 +38,7 @@ public class QqMapDistrictRequest implements Serializable {
      * 是否必填： 否
      * 描述：
      * 缺省时返回一级行政区划，也就是省级
+     * </pre>
      */
     private String id;
 
@@ -50,6 +51,7 @@ public class QqMapDistrictRequest implements Serializable {
      * 1 固定3公里抽稀粒度的区划轮廓
      * 2 支持多种抽稀粒度的区划轮廓，可通过max_offset设置返回轮廓的抽稀级别
      * 3 获取乡镇/街道（四级）轮廓边界
+     * </pre>
      */
     @JSONField(name="get_polygon")
     private String getPolygon;
@@ -63,6 +65,7 @@ public class QqMapDistrictRequest implements Serializable {
      * 500 ：500米
      * 1000：1000米
      * 3000：3000米
+     * </pre>
      */
     @JSONField(name="max_offset")
     private String maxOffset;

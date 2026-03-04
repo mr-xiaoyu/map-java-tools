@@ -8,8 +8,9 @@
         <version>3.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <name>MapJava - Common</name>
     <artifactId>map-java-common</artifactId>
+    <description>地图服务公共包</description>
 
     <dependencies>
         <dependency>

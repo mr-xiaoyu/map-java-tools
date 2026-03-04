@@ -68,9 +68,9 @@ public class QqMapPlaceRequest implements Serializable {
      * category=分类名1,分类名2
      * 分类词数量建议不超过5个，支持设置分类编码（支持的分类请参考：POI分类表）
      * 2. 排除指定分类，语句格式为：
-     * category<>分类名1,分类名2
+     * category 分类名1,分类名2
      * 分类词数量建议不超过5个，支持设置分类编码（支持的分类请参考：POI分类表）
-     * 3. 筛选有电话的地点：tel<>null
+     * 3. 筛选有电话的地点：tel null
      * </pre>
      */
     private String filter;
