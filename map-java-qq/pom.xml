@@ -8,7 +8,7 @@
         <version>3.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <name>MapJava - QQ</name>
     <artifactId>map-java-qq</artifactId>
     <description>腾讯地图服务api封装</description>
 

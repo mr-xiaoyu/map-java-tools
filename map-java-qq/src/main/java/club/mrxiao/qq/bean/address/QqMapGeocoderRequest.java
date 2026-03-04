@@ -26,7 +26,7 @@ public class QqMapGeocoderRequest implements Serializable {
      * <pre>
      * 是否必填： 是（逆地址解析时）
      * 格式：
-     * location=lat<纬度>,lng<经度>
+     * location：lat 纬度,lng 经度
      * </pre>
      */
     private String location;
